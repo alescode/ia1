@@ -1,0 +1,43 @@
+estado: <apuntador a padre, accion> ++ <heuristica> (en el caso de IDA*)
+accion: <fila, columna>
+
+en la reconstruccion: considerar el estado como un vector de perfiles
+
+mantener dos nodos: padre e hijo. De esta forma solo habra que computar
+el padre para cada frontera de hijos distinta
+
+se mantiene la profundidad para verificar determinar cuales nodos en la
+cola son de la frontera y en caso de encontrar un goal no expandir nodos
+que esten mas alla de esta.
+
+EN ESTADO SE NECESITA:
+	[LISTO] - Perfil construir_padre(Perfil inicial)
+	[LISTO] - Perfil construir_perfil(Perfil padre)
+	[LISTO] - void expandir(queue<Estados> q, Perfil actual)
+
+EN PERFIL SE NECESITA:
+	[LISTO] - char calcular_ganador()
+	- aplicar_cambio(fila, columna)
+
+********************************************************************************************
+
+SE QUITO LA MEJORA (EMPEORA) DE EVITAR VOLVER POR LOS PADRES. COLOCAR
+
+********************************************************************************************
+
+BFS VERIFICAR NODOS REPETIDOS:
+
+no se estan verificando repeticiones. Esto puede afectar el numero de nodos
+expandidos y ademas no basta con verificar en la linea de los progenitores
+sino que habria que expandir por todos los hermanos, primos, tios,
+tataratioabuelo y demas familiares desconocidos.
+
+SOLUCION:
+mantener un arreglo con <apuntador a nodo, valor de la heuristica>
+
+¿por que calcular la heuristica? medida de diferenciacion. Dado que es
+una funcion, si dos nodos son iguales sus heuristicas seran distinas.
+Comparacion solo con nodos de igual valor heuristico.
+Consecuencia: se limita el espacio de comparaciones. Notar que para
+comparar es necesario reconstruir desde el perfil inicial con todas las
+acciones el nuevo perfil y luego hacer la comparacion de toda la matriz.

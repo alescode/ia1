@@ -1,0 +1,1486 @@
+votantes 15
+iter: 0
+	branching factor: 16
+	nodos generados: 16
+	nivel: 0
+	cola: 16
+	expandidos: 1
+iter: 1
+	branching factor: 20
+	nodos generados: 36
+	nivel: 1
+	cola: 35
+	expandidos: 2
+iter: 2
+	branching factor: 23
+	nodos generados: 59
+	nivel: 1
+	cola: 57
+	expandidos: 3
+iter: 3
+	branching factor: 21
+	nodos generados: 80
+	nivel: 1
+	cola: 77
+	expandidos: 4
+iter: 4
+	branching factor: 18
+	nodos generados: 98
+	nivel: 1
+	cola: 94
+	expandidos: 5
+iter: 5
+	branching factor: 13
+	nodos generados: 111
+	nivel: 1
+	cola: 106
+	expandidos: 6
+iter: 6
+	branching factor: 16
+	nodos generados: 127
+	nivel: 1
+	cola: 121
+	expandidos: 7
+iter: 7
+	branching factor: 16
+	nodos generados: 143
+	nivel: 1
+	cola: 136
+	expandidos: 8
+iter: 8
+	branching factor: 13
+	nodos generados: 156
+	nivel: 1
+	cola: 148
+	expandidos: 9
+iter: 9
+	branching factor: 16
+	nodos generados: 172
+	nivel: 1
+	cola: 163
+	expandidos: 10
+iter: 10
+	branching factor: 15
+	nodos generados: 187
+	nivel: 1
+	cola: 177
+	expandidos: 11
+iter: 11
+	branching factor: 13
+	nodos generados: 200
+	nivel: 1
+	cola: 189
+	expandidos: 12
+iter: 12
+	branching factor: 14
+	nodos generados: 214
+	nivel: 1
+	cola: 202
+	expandidos: 13
+iter: 13
+	branching factor: 10
+	nodos generados: 224
+	nivel: 1
+	cola: 211
+	expandidos: 14
+iter: 14
+	branching factor: 9
+	nodos generados: 233
+	nivel: 1
+	cola: 219
+	expandidos: 15
+iter: 15
+	branching factor: 7
+	nodos generados: 240
+	nivel: 1
+	cola: 225
+	expandidos: 16
+iter: 16
+	branching factor: 6
+	nodos generados: 246
+	nivel: 1
+	cola: 230
+	expandidos: 17
+iter: 17
+	branching factor: 20
+	nodos generados: 266
+	nivel: 2
+	cola: 249
+	expandidos: 18
+iter: 18
+	branching factor: 22
+	nodos generados: 288
+	nivel: 2
+	cola: 270
+	expandidos: 19
+iter: 19
+	branching factor: 21
+	nodos generados: 309
+	nivel: 2
+	cola: 290
+	expandidos: 20
+iter: 20
+	branching factor: 18
+	nodos generados: 327
+	nivel: 2
+	cola: 307
+	expandidos: 21
+iter: 21
+	branching factor: 15
+	nodos generados: 342
+	nivel: 2
+	cola: 321
+	expandidos: 22
+iter: 22
+	branching factor: 18
+	nodos generados: 360
+	nivel: 2
+	cola: 338
+	expandidos: 23
+iter: 23
+	branching factor: 16
+	nodos generados: 376
+	nivel: 2
+	cola: 353
+	expandidos: 24
+iter: 24
+	branching factor: 14
+	nodos generados: 390
+	nivel: 2
+	cola: 366
+	expandidos: 25
+iter: 25
+	branching factor: 15
+	nodos generados: 405
+	nivel: 2
+	cola: 380
+	expandidos: 26
+iter: 26
+	branching factor: 15
+	nodos generados: 420
+	nivel: 2
+	cola: 394
+	expandidos: 27
+iter: 27
+	branching factor: 13
+	nodos generados: 433
+	nivel: 2
+	cola: 406
+	expandidos: 28
+iter: 28
+	branching factor: 11
+	nodos generados: 444
+	nivel: 2
+	cola: 416
+	expandidos: 29
+iter: 29
+	branching factor: 8
+	nodos generados: 452
+	nivel: 2
+	cola: 423
+	expandidos: 30
+iter: 30
+	branching factor: 8
+	nodos generados: 460
+	nivel: 2
+	cola: 430
+	expandidos: 31
+iter: 31
+	branching factor: 6
+	nodos generados: 466
+	nivel: 2
+	cola: 435
+	expandidos: 32
+iter: 32
+	branching factor: 5
+	nodos generados: 471
+	nivel: 2
+	cola: 439
+	expandidos: 33
+iter: 33
+	branching factor: 8
+	nodos generados: 479
+	nivel: 2
+	cola: 446
+	expandidos: 34
+iter: 34
+	branching factor: 7
+	nodos generados: 486
+	nivel: 2
+	cola: 452
+	expandidos: 35
+iter: 35
+	branching factor: 6
+	nodos generados: 492
+	nivel: 2
+	cola: 457
+	expandidos: 36
+iter: 36
+	branching factor: 3
+	nodos generados: 495
+	nivel: 2
+	cola: 459
+	expandidos: 37
+iter: 37
+	branching factor: 22
+	nodos generados: 517
+	nivel: 2
+	cola: 480
+	expandidos: 38
+iter: 38
+	branching factor: 23
+	nodos generados: 540
+	nivel: 2
+	cola: 502
+	expandidos: 39
+iter: 39
+	branching factor: 21
+	nodos generados: 561
+	nivel: 2
+	cola: 522
+	expandidos: 40
+iter: 40
+	branching factor: 18
+	nodos generados: 579
+	nivel: 2
+	cola: 539
+	expandidos: 41
+iter: 41
+	branching factor: 1
+	nodos generados: 580
+	nivel: 2
+	cola: 539
+	expandidos: 42
+iter: 42
+	branching factor: 18
+	nodos generados: 598
+	nivel: 2
+	cola: 556
+	expandidos: 43
+iter: 43
+	branching factor: 17
+	nodos generados: 615
+	nivel: 2
+	cola: 572
+	expandidos: 44
+iter: 44
+	branching factor: 12
+	nodos generados: 627
+	nivel: 2
+	cola: 583
+	expandidos: 45
+iter: 45
+	branching factor: 15
+	nodos generados: 642
+	nivel: 2
+	cola: 597
+	expandidos: 46
+iter: 46
+	branching factor: 15
+	nodos generados: 657
+	nivel: 2
+	cola: 611
+	expandidos: 47
+iter: 47
+	branching factor: 13
+	nodos generados: 670
+	nivel: 2
+	cola: 623
+	expandidos: 48
+iter: 48
+	branching factor: 15
+	nodos generados: 685
+	nivel: 2
+	cola: 637
+	expandidos: 49
+iter: 49
+	branching factor: 14
+	nodos generados: 699
+	nivel: 2
+	cola: 650
+	expandidos: 50
+iter: 50
+	branching factor: 12
+	nodos generados: 711
+	nivel: 2
+	cola: 661
+	expandidos: 51
+iter: 51
+	branching factor: 10
+	nodos generados: 721
+	nivel: 2
+	cola: 670
+	expandidos: 52
+iter: 52
+	branching factor: 7
+	nodos generados: 728
+	nivel: 2
+	cola: 676
+	expandidos: 53
+iter: 53
+	branching factor: 7
+	nodos generados: 735
+	nivel: 2
+	cola: 682
+	expandidos: 54
+iter: 54
+	branching factor: 6
+	nodos generados: 741
+	nivel: 2
+	cola: 687
+	expandidos: 55
+iter: 55
+	branching factor: 7
+	nodos generados: 748
+	nivel: 2
+	cola: 693
+	expandidos: 56
+iter: 56
+	branching factor: 8
+	nodos generados: 756
+	nivel: 2
+	cola: 700
+	expandidos: 57
+iter: 57
+	branching factor: 7
+	nodos generados: 763
+	nivel: 2
+	cola: 706
+	expandidos: 58
+iter: 58
+	branching factor: 8
+	nodos generados: 771
+	nivel: 2
+	cola: 713
+	expandidos: 59
+iter: 59
+	branching factor: 3
+	nodos generados: 774
+	nivel: 2
+	cola: 715
+	expandidos: 60
+iter: 60
+	branching factor: 1
+	nodos generados: 775
+	nivel: 2
+	cola: 715
+	expandidos: 61
+iter: 61
+	branching factor: 20
+	nodos generados: 795
+	nivel: 2
+	cola: 734
+	expandidos: 62
+iter: 62
+	branching factor: 20
+	nodos generados: 815
+	nivel: 2
+	cola: 753
+	expandidos: 63
+iter: 63
+	branching factor: 18
+	nodos generados: 833
+	nivel: 2
+	cola: 770
+	expandidos: 64
+iter: 64
+	branching factor: 17
+	nodos generados: 850
+	nivel: 2
+	cola: 786
+	expandidos: 65
+iter: 65
+	branching factor: 14
+	nodos generados: 864
+	nivel: 2
+	cola: 799
+	expandidos: 66
+iter: 66
+	branching factor: 15
+	nodos generados: 879
+	nivel: 2
+	cola: 813
+	expandidos: 67
+iter: 67
+	branching factor: 15
+	nodos generados: 894
+	nivel: 2
+	cola: 827
+	expandidos: 68
+iter: 68
+	branching factor: 13
+	nodos generados: 907
+	nivel: 2
+	cola: 839
+	expandidos: 69
+iter: 69
+	branching factor: 15
+	nodos generados: 922
+	nivel: 2
+	cola: 853
+	expandidos: 70
+iter: 70
+	branching factor: 14
+	nodos generados: 936
+	nivel: 2
+	cola: 866
+	expandidos: 71
+iter: 71
+	branching factor: 12
+	nodos generados: 948
+	nivel: 2
+	cola: 877
+	expandidos: 72
+iter: 72
+	branching factor: 10
+	nodos generados: 958
+	nivel: 2
+	cola: 886
+	expandidos: 73
+iter: 73
+	branching factor: 8
+	nodos generados: 966
+	nivel: 2
+	cola: 893
+	expandidos: 74
+iter: 74
+	branching factor: 7
+	nodos generados: 973
+	nivel: 2
+	cola: 899
+	expandidos: 75
+iter: 75
+	branching factor: 7
+	nodos generados: 980
+	nivel: 2
+	cola: 905
+	expandidos: 76
+iter: 76
+	branching factor: 6
+	nodos generados: 986
+	nivel: 2
+	cola: 910
+	expandidos: 77
+iter: 77
+	branching factor: 7
+	nodos generados: 993
+	nivel: 2
+	cola: 916
+	expandidos: 78
+iter: 78
+	branching factor: 6
+	nodos generados: 999
+	nivel: 2
+	cola: 921
+	expandidos: 79
+iter: 79
+	branching factor: 4
+	nodos generados: 1003
+	nivel: 2
+	cola: 924
+	expandidos: 80
+iter: 80
+	branching factor: 2
+	nodos generados: 1005
+	nivel: 2
+	cola: 925
+	expandidos: 81
+iter: 81
+	branching factor: 18
+	nodos generados: 1023
+	nivel: 2
+	cola: 942
+	expandidos: 82
+iter: 82
+	branching factor: 17
+	nodos generados: 1040
+	nivel: 2
+	cola: 958
+	expandidos: 83
+iter: 83
+	branching factor: 12
+	nodos generados: 1052
+	nivel: 2
+	cola: 969
+	expandidos: 84
+iter: 84
+	branching factor: 16
+	nodos generados: 1068
+	nivel: 2
+	cola: 984
+	expandidos: 85
+iter: 85
+	branching factor: 15
+	nodos generados: 1083
+	nivel: 2
+	cola: 998
+	expandidos: 86
+iter: 86
+	branching factor: 15
+	nodos generados: 1098
+	nivel: 2
+	cola: 1012
+	expandidos: 87
+iter: 87
+	branching factor: 15
+	nodos generados: 1113
+	nivel: 2
+	cola: 1026
+	expandidos: 88
+iter: 88
+	branching factor: 14
+	nodos generados: 1127
+	nivel: 2
+	cola: 1039
+	expandidos: 89
+iter: 89
+	branching factor: 12
+	nodos generados: 1139
+	nivel: 2
+	cola: 1050
+	expandidos: 90
+iter: 90
+	branching factor: 10
+	nodos generados: 1149
+	nivel: 2
+	cola: 1059
+	expandidos: 91
+iter: 91
+	branching factor: 8
+	nodos generados: 1157
+	nivel: 2
+	cola: 1066
+	expandidos: 92
+iter: 92
+	branching factor: 8
+	nodos generados: 1165
+	nivel: 2
+	cola: 1073
+	expandidos: 93
+iter: 93
+	branching factor: 7
+	nodos generados: 1172
+	nivel: 2
+	cola: 1079
+	expandidos: 94
+iter: 94
+	branching factor: 6
+	nodos generados: 1178
+	nivel: 2
+	cola: 1084
+	expandidos: 95
+iter: 95
+	branching factor: 7
+	nodos generados: 1185
+	nivel: 2
+	cola: 1090
+	expandidos: 96
+iter: 96
+	branching factor: 6
+	nodos generados: 1191
+	nivel: 2
+	cola: 1095
+	expandidos: 97
+iter: 97
+	branching factor: 4
+	nodos generados: 1195
+	nivel: 2
+	cola: 1098
+	expandidos: 98
+iter: 98
+	branching factor: 2
+	nodos generados: 1197
+	nivel: 2
+	cola: 1099
+	expandidos: 99
+iter: 99
+	branching factor: 1
+	nodos generados: 1198
+	nivel: 2
+	cola: 1099
+	expandidos: 100
+iter: 100
+	branching factor: 15
+	nodos generados: 1213
+	nivel: 2
+	cola: 1113
+	expandidos: 101
+iter: 101
+	branching factor: 14
+	nodos generados: 1227
+	nivel: 2
+	cola: 1126
+	expandidos: 102
+iter: 102
+	branching factor: 12
+	nodos generados: 1239
+	nivel: 2
+	cola: 1137
+	expandidos: 103
+iter: 103
+	branching factor: 11
+	nodos generados: 1250
+	nivel: 2
+	cola: 1147
+	expandidos: 104
+iter: 104
+	branching factor: 8
+	nodos generados: 1258
+	nivel: 2
+	cola: 1154
+	expandidos: 105
+iter: 105
+	branching factor: 8
+	nodos generados: 1266
+	nivel: 2
+	cola: 1161
+	expandidos: 106
+iter: 106
+	branching factor: 9
+	nodos generados: 1275
+	nivel: 2
+	cola: 1169
+	expandidos: 107
+iter: 107
+	branching factor: 8
+	nodos generados: 1283
+	nivel: 2
+	cola: 1176
+	expandidos: 108
+iter: 108
+	branching factor: 8
+	nodos generados: 1291
+	nivel: 2
+	cola: 1183
+	expandidos: 109
+iter: 109
+	branching factor: 6
+	nodos generados: 1297
+	nivel: 2
+	cola: 1188
+	expandidos: 110
+iter: 110
+	branching factor: 4
+	nodos generados: 1301
+	nivel: 2
+	cola: 1191
+	expandidos: 111
+iter: 111
+	branching factor: 2
+	nodos generados: 1303
+	nivel: 2
+	cola: 1192
+	expandidos: 112
+iter: 112
+	branching factor: 1
+	nodos generados: 1304
+	nivel: 2
+	cola: 1192
+	expandidos: 113
+iter: 113
+	branching factor: 15
+	nodos generados: 1319
+	nivel: 2
+	cola: 1206
+	expandidos: 114
+iter: 114
+	branching factor: 14
+	nodos generados: 1333
+	nivel: 2
+	cola: 1219
+	expandidos: 115
+iter: 115
+	branching factor: 13
+	nodos generados: 1346
+	nivel: 2
+	cola: 1231
+	expandidos: 116
+iter: 116
+	branching factor: 15
+	nodos generados: 1361
+	nivel: 2
+	cola: 1245
+	expandidos: 117
+iter: 117
+	branching factor: 14
+	nodos generados: 1375
+	nivel: 2
+	cola: 1258
+	expandidos: 118
+iter: 118
+	branching factor: 12
+	nodos generados: 1387
+	nivel: 2
+	cola: 1269
+	expandidos: 119
+iter: 119
+	branching factor: 10
+	nodos generados: 1397
+	nivel: 2
+	cola: 1278
+	expandidos: 120
+iter: 120
+	branching factor: 7
+	nodos generados: 1404
+	nivel: 2
+	cola: 1284
+	expandidos: 121
+iter: 121
+	branching factor: 7
+	nodos generados: 1411
+	nivel: 2
+	cola: 1290
+	expandidos: 122
+iter: 122
+	branching factor: 6
+	nodos generados: 1417
+	nivel: 2
+	cola: 1295
+	expandidos: 123
+iter: 123
+	branching factor: 6
+	nodos generados: 1423
+	nivel: 2
+	cola: 1300
+	expandidos: 124
+iter: 124
+	branching factor: 7
+	nodos generados: 1430
+	nivel: 2
+	cola: 1306
+	expandidos: 125
+iter: 125
+	branching factor: 6
+	nodos generados: 1436
+	nivel: 2
+	cola: 1311
+	expandidos: 126
+iter: 126
+	branching factor: 4
+	nodos generados: 1440
+	nivel: 2
+	cola: 1314
+	expandidos: 127
+iter: 127
+	branching factor: 2
+	nodos generados: 1442
+	nivel: 2
+	cola: 1315
+	expandidos: 128
+iter: 128
+	branching factor: 0
+	nodos generados: 1442
+	nivel: 2
+	cola: 1314
+	expandidos: 129
+iter: 129
+	branching factor: 0
+	nodos generados: 1442
+	nivel: 2
+	cola: 1313
+	expandidos: 130
+iter: 130
+	branching factor: 14
+	nodos generados: 1456
+	nivel: 2
+	cola: 1326
+	expandidos: 131
+iter: 131
+	branching factor: 14
+	nodos generados: 1470
+	nivel: 2
+	cola: 1339
+	expandidos: 132
+iter: 132
+	branching factor: 15
+	nodos generados: 1485
+	nivel: 2
+	cola: 1353
+	expandidos: 133
+iter: 133
+	branching factor: 14
+	nodos generados: 1499
+	nivel: 2
+	cola: 1366
+	expandidos: 134
+iter: 134
+	branching factor: 12
+	nodos generados: 1511
+	nivel: 2
+	cola: 1377
+	expandidos: 135
+iter: 135
+	branching factor: 10
+	nodos generados: 1521
+	nivel: 2
+	cola: 1386
+	expandidos: 136
+iter: 136
+	branching factor: 7
+	nodos generados: 1528
+	nivel: 2
+	cola: 1392
+	expandidos: 137
+iter: 137
+	branching factor: 7
+	nodos generados: 1535
+	nivel: 2
+	cola: 1398
+	expandidos: 138
+iter: 138
+	branching factor: 6
+	nodos generados: 1541
+	nivel: 2
+	cola: 1403
+	expandidos: 139
+iter: 139
+	branching factor: 5
+	nodos generados: 1546
+	nivel: 2
+	cola: 1407
+	expandidos: 140
+iter: 140
+	branching factor: 7
+	nodos generados: 1553
+	nivel: 2
+	cola: 1413
+	expandidos: 141
+iter: 141
+	branching factor: 6
+	nodos generados: 1559
+	nivel: 2
+	cola: 1418
+	expandidos: 142
+iter: 142
+	branching factor: 4
+	nodos generados: 1563
+	nivel: 2
+	cola: 1421
+	expandidos: 143
+iter: 143
+	branching factor: 2
+	nodos generados: 1565
+	nivel: 2
+	cola: 1422
+	expandidos: 144
+iter: 144
+	branching factor: 15
+	nodos generados: 1580
+	nivel: 2
+	cola: 1436
+	expandidos: 145
+iter: 145
+	branching factor: 16
+	nodos generados: 1596
+	nivel: 2
+	cola: 1451
+	expandidos: 146
+iter: 146
+	branching factor: 15
+	nodos generados: 1611
+	nivel: 2
+	cola: 1465
+	expandidos: 147
+iter: 147
+	branching factor: 13
+	nodos generados: 1624
+	nivel: 2
+	cola: 1477
+	expandidos: 148
+iter: 148
+	branching factor: 10
+	nodos generados: 1634
+	nivel: 2
+	cola: 1486
+	expandidos: 149
+iter: 149
+	branching factor: 7
+	nodos generados: 1641
+	nivel: 2
+	cola: 1492
+	expandidos: 150
+iter: 150
+	branching factor: 7
+	nodos generados: 1648
+	nivel: 2
+	cola: 1498
+	expandidos: 151
+iter: 151
+	branching factor: 6
+	nodos generados: 1654
+	nivel: 2
+	cola: 1503
+	expandidos: 152
+iter: 152
+	branching factor: 5
+	nodos generados: 1659
+	nivel: 2
+	cola: 1507
+	expandidos: 153
+iter: 153
+	branching factor: 7
+	nodos generados: 1666
+	nivel: 2
+	cola: 1513
+	expandidos: 154
+iter: 154
+	branching factor: 6
+	nodos generados: 1672
+	nivel: 2
+	cola: 1518
+	expandidos: 155
+iter: 155
+	branching factor: 4
+	nodos generados: 1676
+	nivel: 2
+	cola: 1521
+	expandidos: 156
+iter: 156
+	branching factor: 2
+	nodos generados: 1678
+	nivel: 2
+	cola: 1522
+	expandidos: 157
+iter: 157
+	branching factor: 16
+	nodos generados: 1694
+	nivel: 2
+	cola: 1537
+	expandidos: 158
+iter: 158
+	branching factor: 17
+	nodos generados: 1711
+	nivel: 2
+	cola: 1553
+	expandidos: 159
+iter: 159
+	branching factor: 15
+	nodos generados: 1726
+	nivel: 2
+	cola: 1567
+	expandidos: 160
+iter: 160
+	branching factor: 13
+	nodos generados: 1739
+	nivel: 2
+	cola: 1579
+	expandidos: 161
+iter: 161
+	branching factor: 0
+	nodos generados: 1739
+	nivel: 2
+	cola: 1578
+	expandidos: 162
+iter: 162
+	branching factor: 12
+	nodos generados: 1751
+	nivel: 2
+	cola: 1589
+	expandidos: 163
+iter: 163
+	branching factor: 11
+	nodos generados: 1762
+	nivel: 2
+	cola: 1599
+	expandidos: 164
+iter: 164
+	branching factor: 11
+	nodos generados: 1773
+	nivel: 2
+	cola: 1609
+	expandidos: 165
+iter: 165
+	branching factor: 10
+	nodos generados: 1783
+	nivel: 2
+	cola: 1618
+	expandidos: 166
+iter: 166
+	branching factor: 8
+	nodos generados: 1791
+	nivel: 2
+	cola: 1625
+	expandidos: 167
+iter: 167
+	branching factor: 8
+	nodos generados: 1799
+	nivel: 2
+	cola: 1632
+	expandidos: 168
+iter: 168
+	branching factor: 9
+	nodos generados: 1808
+	nivel: 2
+	cola: 1640
+	expandidos: 169
+iter: 169
+	branching factor: 7
+	nodos generados: 1815
+	nivel: 2
+	cola: 1646
+	expandidos: 170
+iter: 170
+	branching factor: 6
+	nodos generados: 1821
+	nivel: 2
+	cola: 1651
+	expandidos: 171
+iter: 171
+	branching factor: 4
+	nodos generados: 1825
+	nivel: 2
+	cola: 1654
+	expandidos: 172
+iter: 172
+	branching factor: 2
+	nodos generados: 1827
+	nivel: 2
+	cola: 1655
+	expandidos: 173
+iter: 173
+	branching factor: 1
+	nodos generados: 1828
+	nivel: 2
+	cola: 1655
+	expandidos: 174
+iter: 174
+	branching factor: 13
+	nodos generados: 1841
+	nivel: 2
+	cola: 1667
+	expandidos: 175
+iter: 175
+	branching factor: 13
+	nodos generados: 1854
+	nivel: 2
+	cola: 1679
+	expandidos: 176
+iter: 176
+	branching factor: 12
+	nodos generados: 1866
+	nivel: 2
+	cola: 1690
+	expandidos: 177
+iter: 177
+	branching factor: 11
+	nodos generados: 1877
+	nivel: 2
+	cola: 1700
+	expandidos: 178
+iter: 178
+	branching factor: 12
+	nodos generados: 1889
+	nivel: 2
+	cola: 1711
+	expandidos: 179
+iter: 179
+	branching factor: 10
+	nodos generados: 1899
+	nivel: 2
+	cola: 1720
+	expandidos: 180
+iter: 180
+	branching factor: 7
+	nodos generados: 1906
+	nivel: 2
+	cola: 1726
+	expandidos: 181
+iter: 181
+	branching factor: 7
+	nodos generados: 1913
+	nivel: 2
+	cola: 1732
+	expandidos: 182
+iter: 182
+	branching factor: 6
+	nodos generados: 1919
+	nivel: 2
+	cola: 1737
+	expandidos: 183
+iter: 183
+	branching factor: 5
+	nodos generados: 1924
+	nivel: 2
+	cola: 1741
+	expandidos: 184
+iter: 184
+	branching factor: 7
+	nodos generados: 1931
+	nivel: 2
+	cola: 1747
+	expandidos: 185
+iter: 185
+	branching factor: 6
+	nodos generados: 1937
+	nivel: 2
+	cola: 1752
+	expandidos: 186
+iter: 186
+	branching factor: 4
+	nodos generados: 1941
+	nivel: 2
+	cola: 1755
+	expandidos: 187
+iter: 187
+	branching factor: 2
+	nodos generados: 1943
+	nivel: 2
+	cola: 1756
+	expandidos: 188
+iter: 188
+	branching factor: 2
+	nodos generados: 1945
+	nivel: 2
+	cola: 1757
+	expandidos: 189
+iter: 189
+	branching factor: 13
+	nodos generados: 1958
+	nivel: 2
+	cola: 1769
+	expandidos: 190
+iter: 190
+	branching factor: 12
+	nodos generados: 1970
+	nivel: 2
+	cola: 1780
+	expandidos: 191
+iter: 191
+	branching factor: 10
+	nodos generados: 1980
+	nivel: 2
+	cola: 1789
+	expandidos: 192
+iter: 192
+	branching factor: 9
+	nodos generados: 1989
+	nivel: 2
+	cola: 1797
+	expandidos: 193
+iter: 193
+	branching factor: 7
+	nodos generados: 1996
+	nivel: 2
+	cola: 1803
+	expandidos: 194
+iter: 194
+	branching factor: 7
+	nodos generados: 2003
+	nivel: 2
+	cola: 1809
+	expandidos: 195
+iter: 195
+	branching factor: 6
+	nodos generados: 2009
+	nivel: 2
+	cola: 1814
+	expandidos: 196
+iter: 196
+	branching factor: 6
+	nodos generados: 2015
+	nivel: 2
+	cola: 1819
+	expandidos: 197
+iter: 197
+	branching factor: 8
+	nodos generados: 2023
+	nivel: 2
+	cola: 1826
+	expandidos: 198
+iter: 198
+	branching factor: 7
+	nodos generados: 2030
+	nivel: 2
+	cola: 1832
+	expandidos: 199
+iter: 199
+	branching factor: 5
+	nodos generados: 2035
+	nivel: 2
+	cola: 1836
+	expandidos: 200
+iter: 200
+	branching factor: 3
+	nodos generados: 2038
+	nivel: 2
+	cola: 1838
+	expandidos: 201
+iter: 201
+	branching factor: 0
+	nodos generados: 2038
+	nivel: 2
+	cola: 1837
+	expandidos: 202
+iter: 202
+	branching factor: 0
+	nodos generados: 2038
+	nivel: 2
+	cola: 1836
+	expandidos: 203
+iter: 203
+	branching factor: 0
+	nodos generados: 2038
+	nivel: 2
+	cola: 1835
+	expandidos: 204
+iter: 204
+	branching factor: 1
+	nodos generados: 2039
+	nivel: 2
+	cola: 1835
+	expandidos: 205
+iter: 205
+	branching factor: 10
+	nodos generados: 2049
+	nivel: 2
+	cola: 1844
+	expandidos: 206
+iter: 206
+	branching factor: 10
+	nodos generados: 2059
+	nivel: 2
+	cola: 1853
+	expandidos: 207
+iter: 207
+	branching factor: 7
+	nodos generados: 2066
+	nivel: 2
+	cola: 1859
+	expandidos: 208
+iter: 208
+	branching factor: 8
+	nodos generados: 2074
+	nivel: 2
+	cola: 1866
+	expandidos: 209
+iter: 209
+	branching factor: 6
+	nodos generados: 2080
+	nivel: 2
+	cola: 1871
+	expandidos: 210
+iter: 210
+	branching factor: 6
+	nodos generados: 2086
+	nivel: 2
+	cola: 1876
+	expandidos: 211
+iter: 211
+	branching factor: 8
+	nodos generados: 2094
+	nivel: 2
+	cola: 1883
+	expandidos: 212
+iter: 212
+	branching factor: 7
+	nodos generados: 2101
+	nivel: 2
+	cola: 1889
+	expandidos: 213
+iter: 213
+	branching factor: 5
+	nodos generados: 2106
+	nivel: 2
+	cola: 1893
+	expandidos: 214
+iter: 214
+	branching factor: 3
+	nodos generados: 2109
+	nivel: 2
+	cola: 1895
+	expandidos: 215
+iter: 215
+	branching factor: 4
+	nodos generados: 2113
+	nivel: 2
+	cola: 1898
+	expandidos: 216
+iter: 216
+	branching factor: 0
+	nodos generados: 2113
+	nivel: 2
+	cola: 1897
+	expandidos: 217
+iter: 217
+	branching factor: 8
+	nodos generados: 2121
+	nivel: 2
+	cola: 1904
+	expandidos: 218
+iter: 218
+	branching factor: 7
+	nodos generados: 2128
+	nivel: 2
+	cola: 1910
+	expandidos: 219
+iter: 219
+	branching factor: 5
+	nodos generados: 2133
+	nivel: 2
+	cola: 1914
+	expandidos: 220
+iter: 220
+	branching factor: 1
+	nodos generados: 2134
+	nivel: 2
+	cola: 1914
+	expandidos: 221
+iter: 221
+	branching factor: 7
+	nodos generados: 2141
+	nivel: 2
+	cola: 1920
+	expandidos: 222
+iter: 222
+	branching factor: 6
+	nodos generados: 2147
+	nivel: 2
+	cola: 1925
+	expandidos: 223
+iter: 223
+	branching factor: 4
+	nodos generados: 2151
+	nivel: 2
+	cola: 1928
+	expandidos: 224
+iter: 224
+	branching factor: 2
+	nodos generados: 2153
+	nivel: 2
+	cola: 1929
+	expandidos: 225
+iter: 225
+	branching factor: 0
+	nodos generados: 2153
+	nivel: 2
+	cola: 1928
+	expandidos: 226
+iter: 226
+	branching factor: 0
+	nodos generados: 2153
+	nivel: 2
+	cola: 1927
+	expandidos: 227
+iter: 227
+	branching factor: 7
+	nodos generados: 2160
+	nivel: 2
+	cola: 1933
+	expandidos: 228
+iter: 228
+	branching factor: 4
+	nodos generados: 2164
+	nivel: 2
+	cola: 1936
+	expandidos: 229
+iter: 229
+	branching factor: 6
+	nodos generados: 2170
+	nivel: 2
+	cola: 1941
+	expandidos: 230
+iter: 230
+	branching factor: 6
+	nodos generados: 2176
+	nivel: 2
+	cola: 1946
+	expandidos: 231
+iter: 231
+	branching factor: 6
+	nodos generados: 2182
+	nivel: 2
+	cola: 1951
+	expandidos: 232
+iter: 232
+	branching factor: 2
+	nodos generados: 2184
+	nivel: 2
+	cola: 1952
+	expandidos: 233
+iter: 233
+	branching factor: 2
+	nodos generados: 2186
+	nivel: 2
+	cola: 1953
+	expandidos: 234
+iter: 234
+	branching factor: 3
+	nodos generados: 2189
+	nivel: 2
+	cola: 1955
+	expandidos: 235
+iter: 235
+	branching factor: 5
+	nodos generados: 2194
+	nivel: 2
+	cola: 1959
+	expandidos: 236
+iter: 236
+	branching factor: 5
+	nodos generados: 2199
+	nivel: 2
+	cola: 1963
+	expandidos: 237
+iter: 237
+	branching factor: 7
+	nodos generados: 2206
+	nivel: 2
+	cola: 1969
+	expandidos: 238
+iter: 238
+	branching factor: 6
+	nodos generados: 2212
+	nivel: 2
+	cola: 1974
+	expandidos: 239
+iter: 239
+	branching factor: 4
+	nodos generados: 2216
+	nivel: 2
+	cola: 1977
+	expandidos: 240
+iter: 240
+	branching factor: 2
+	nodos generados: 2218
+	nivel: 2
+	cola: 1978
+	expandidos: 241
+iter: 241
+	branching factor: 1
+	nodos generados: 2219
+	nivel: 2
+	cola: 1978
+	expandidos: 242
+iter: 242
+	branching factor: 8
+	nodos generados: 2227
+	nivel: 2
+	cola: 1985
+	expandidos: 243
+iter: 243
+	branching factor: 7
+	nodos generados: 2234
+	nivel: 2
+	cola: 1991
+	expandidos: 244
+iter: 244
+	branching factor: 6
+	nodos generados: 2240
+	nivel: 2
+	cola: 1996
+	expandidos: 245
+iter: 245
+	branching factor: 4
+	nodos generados: 2244
+	nivel: 2
+	cola: 1999
+	expandidos: 246
+iter: 246
+	branching factor: 2
+	nodos generados: 2246
+	nivel: 2
+	cola: 2000
+	expandidos: 247
+iter: 247
+	gano el 1
+0x9ad45e8 0 0 3

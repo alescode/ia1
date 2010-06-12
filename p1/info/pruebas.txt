@@ -1,0 +1,25 @@
+iter: 2321571
+	nivel: 5
+	cola: 71772855
+	expandidos: 2321572
+iter: 2321572
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Cancelado
+
+real	4m45.602s
+user	1m21.553s
+sys	0m24.290s
+
+iter: 126691
+	nivel: 2
+	cola: 107899832
+	expandidos: 126692
+iter: 126692
+terminate called after throwing an instance of 'St9bad_alloc'
+  what():  std::bad_alloc
+Cancelado
+
+real	1m3.230s
+user	0m57.020s
+sys	0m3.660s
