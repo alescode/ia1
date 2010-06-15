@@ -70,9 +70,9 @@ int main(int argc, char* argv[]){
 
 	if (!ok){
 		cout << endl
-			 << "  Uso de dogson: "
+			 << "  Uso de dodgson: "
 			 << endl << endl
-			 << "	dogson {-ida,-bfs} [-all] [-final <output>] input"
+			 << "	dodgson {-ida,-bfs} [-all] [-final <output>] input"
 			 << endl << endl;
 		exit(0);
 	}

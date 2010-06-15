@@ -221,7 +221,7 @@ class Perfil {
 
         //Perfil& operator= (Perfil& p) {}
 
-        candidato calcular_ganador_dogson() {
+        candidato calcular_ganador_dodgson() {
             int mitad_votantes = num_votantes/2;
 
             for (int i = 0; i < num_candidatos; i++) { 

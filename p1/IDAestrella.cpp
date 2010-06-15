@@ -69,9 +69,9 @@ list<Estado> IDAestrella(Perfil *perfil_inicial, bool all){
 		/* Verificamos si hemos llegado a un goal, si no expandimos */
 		perfil_actual->obtener_N();
 
-		if (perfil_actual->calcular_ganador_dogson() != NO_GANADOR){
+		if (perfil_actual->calcular_ganador_dodgson() != NO_GANADOR){
 
-			cout << "	gano el " << (int)perfil_actual->calcular_ganador_dogson() << endl;
+			cout << "	gano el " << (int)perfil_actual->calcular_ganador_dodgson() << endl;
 			metas.push_back(*n);
 			n->print(cout);
 			if (!all){
