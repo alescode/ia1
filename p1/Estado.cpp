@@ -2,7 +2,7 @@
 #include <stack>
 #include <queue>
 #include <cmath>
-#include "PerfilPreferencia.cpp"
+#include "Perfil.cpp"
 
 #define NO_VISITADO -1
 #define VISITADO -2
