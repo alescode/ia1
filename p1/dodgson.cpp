@@ -139,10 +139,9 @@ int main(int argc, char* argv[]){
 	switch (algoritmo) {
 		case 1:
 			resultados = BFS(p, all);
-
 			break;
 		case 2:
-			//resultados = IDAestrella(p, all);
+			resultados = IDAestrella(p, all);
 			break;
 	}
 	cout << "Dogson winner:";
