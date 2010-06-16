@@ -45,15 +45,27 @@ Búsqueda}
 \maketitle
 
 \section{Decisiones de implementación}
-La programación concurrente es un elemento importante como mecanismo para optimizar
-el desempeño de aplicaciones virtuales. En el presente trabajo se lleva a cabo una investigación
-que busca mejorar el rendimiento de un programa sencillo, que calcula el valor de la integral definida 
-de un polinomio de tercer grado, a través de técnicas de programación concurrentes estudiadas en
-la asignatura de Sistemas Operativos. 
+\begin{itemize}
+\item Representación de estado (caso bfs y caso ida*)
 
-\begin{enumerate}
-	\item
-\end{enumerate}
+\item Explicación de obtener sucesor (ambos casos)
+
+\item Detalles de agregar preferencia (en el sentido
+de hacer una agregacion logaritmica en ciertos casos)
+\item Nodos generados almacenados en un vector ordenados
+(búsqueda logarítmica)
+
+\item Explicar mejora de considerar que para los hijos
+de un mismo padre se computa este una sola vez.
+
+\item Se precomputa para cada nodo del bfs una funcion de
+clasificacion que permite no tener que generar todos los
+estados de la tabla de visitados para comparar con el
+nuevo a estado a expandir. Presentar informalmente
+ciertos resultados que se obtuvieron con respecto a las
+proporciones.
+
+\end{itemize}
 
 \section{Discusión de resultados}
 

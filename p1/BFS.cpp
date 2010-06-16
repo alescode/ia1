@@ -12,7 +12,6 @@ int num_expandidos;
 int num_cambios;
 
 list<candidato> BFS(Perfil *perfil_inicial, bool all){
-	cout << "final: " << final << endl;
 	queue<Estado*> *q = new queue<Estado*>();
 	list<candidato> metas;
 	vector<Estado*> visitados;
@@ -38,6 +37,10 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		n = q->front();
 		q->pop();
 
+		if (num_cambios != n->obtener_profundidad()){
+			cout << n->obtener_profundidad() << endl;
+		}
+		
 		num_cambios = n->obtener_profundidad();
 
 		/* Verificamos si el padre del nodo anterior es el mismo de este */

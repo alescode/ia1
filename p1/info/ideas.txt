@@ -27,12 +27,6 @@ SE QUITO LA MEJORA (EMPEORA) DE EVITAR VOLVER POR LOS PADRES. COLOCAR
 
 BFS VERIFICAR NODOS REPETIDOS:
 
-no se estan verificando repeticiones. Esto puede afectar el numero de nodos
-expandidos y ademas no basta con verificar en la linea de los progenitores
-sino que habria que expandir por todos los hermanos, primos, tios,
-tataratioabuelo y demas familiares desconocidos.
-
-SOLUCION:
 mantener un arreglo con <apuntador a nodo, valor de la heuristica>
 
 ¿por que calcular la heuristica? medida de diferenciacion. Dado que es
