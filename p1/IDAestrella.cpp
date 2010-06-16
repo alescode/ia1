@@ -21,11 +21,14 @@ list<Estado> IDAestrella(Perfil *perfil_inicial, bool all){
 
     cout << "IDA*: limite ";
     cout << limite_f << endl;
-#if 0
-	/* Encolamos el estado inicial */
+
 	Estado *n = new Estado(NULL, 0, 0 , 0);
+	/* Encolamos el estado inicial */
 	q->push(n);
 
+    //while ()
+    exit(0);
+#if 0
 	int iteraciones = 0;
 	int expandidos = 0;
 

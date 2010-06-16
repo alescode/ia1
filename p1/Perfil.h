@@ -53,7 +53,7 @@ class Perfil {
 
         double Tprima(candidato x) ;
 
-        double h() ;
+        int h() ;
 
         int calcular_cambio_N(candidato a,candidato b);
 

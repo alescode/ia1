@@ -201,17 +201,17 @@ int Perfil::compare(Perfil& p){
     return (((double) T + lg + 1.0)/(lg + 3.0));
 }
 
- double Perfil::h() {
+int Perfil::h() {
     double min = numeric_limits<double>::infinity();
     for (candidato c = 0; c < num_candidatos; c++) {
         double t = Tprima(c);
         if (t < min)
             min = t;
     }
-    return min;
+    return (int) ceil(min);
 }
 
- int Perfil::funcion_de_clasificacion() {
+int Perfil::funcion_de_clasificacion() {
     double sol = 0;
     for (candidato c = 0; c < num_candidatos; c++) {
         double t = Tprima(c);
