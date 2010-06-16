@@ -6,6 +6,6 @@
 #include <list>
 #include "Estado.cpp"
 
-list<Estado> IDAestrella(Perfil *perfil_inicial, bool all);
+list<candidato>* IDAestrella(Perfil *perfil_inicial, bool all);
 
 #endif
