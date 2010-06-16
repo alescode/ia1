@@ -157,7 +157,7 @@ int Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferenci
     return this->agregar_preferencia(unitaria);
 }
 
-inline void Perfil::desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
+void Perfil::desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
 	aplicar_cambio_elemental(num_candidato,num_preferencia);
 }
 

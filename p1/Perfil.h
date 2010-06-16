@@ -43,7 +43,7 @@ class Perfil {
          * Devuelve un nuevo perfil idéntico al original exceptuando este cambio. */
         int aplicar_cambio_elemental(candidato num_candidato, int num_preferencia) ;
 
-		inline void desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia);
+		void desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia);
 
         int obtener_num_preferencias();
 
