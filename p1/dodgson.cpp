@@ -13,10 +13,9 @@ int num_votantes;
 string final;				/* Nombre de archivo para colocar la salida */
 string candidatos[250];
 
-extern int num_generados;
-extern int num_expandidos;
-extern int num_cambios;
-
+int num_generados = 0;
+int num_expandidos = 0;
+int num_cambios = 0;
 
 int main(int argc, char* argv[]){
 	char algoritmo = NO_ALGORITMO;
@@ -139,10 +138,9 @@ int main(int argc, char* argv[]){
 	switch (algoritmo) {
 		case 1:
 			resultados = BFS(p, all);
-
 			break;
 		case 2:
-			//resultados = IDAestrella(p, all);
+			resultados = IDAestrella(p, all);
 			break;
 	}
 	cout << "Dogson winner:";

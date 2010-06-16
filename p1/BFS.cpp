@@ -7,9 +7,9 @@ extern int num_votantes;
 extern string final;
 extern string candidatos[250];
 
-int num_generados;
-int num_expandidos;
-int num_cambios;
+extern int num_generados;
+extern int num_expandidos;
+extern int num_cambios;
 
 list<candidato> BFS(Perfil *perfil_inicial, bool all){
 	queue<Estado*> *q = new queue<Estado*>();
