@@ -141,10 +141,11 @@ candidato Perfil::calcular_ganador_dodgson() {
  * en la lista de preferencias indicada por num_preferencia.
  * Devuelve un nuevo perfil idéntico al original exceptuando este cambio.*/
 int Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
-    Preferencia* p = (*info)[num_preferencia];
-    /* Decrementamos el numero de votantes con esta preferencia */
-    p->crementar(-1);
 
+	Preferencia* p = (*info)[num_preferencia];
+    /* Decrementamos el numero de votantes con esta preferencia */
+
+    p->crementar(-1);
     Preferencia* unitaria = new Preferencia(*p, true);
     unitaria->cambio_elemental(num_candidato);
 
