@@ -1,6 +1,8 @@
 #ifndef _PERFIL
 	#define _PERFIL
 
+#include <iostream>
+#include <fstream>
 #include "Preferencia.h"
 
 class Perfil {
@@ -59,7 +61,9 @@ class Perfil {
 
         int calcular_cambio_N(candidato a,candidato b);
 
-		 candidato obtener(candidato j, int i);
+		candidato obtener(candidato j, int i);
+
+		void guardar(string filename);
 };
 
 #endif

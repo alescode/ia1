@@ -1,5 +1,7 @@
 #include "Perfil.h"
 
+extern string candidatos[250];
+
 Perfil::Perfil (int capacidad) {
     this->info = new vector<Preferencia*>;
     (this->info)->reserve(capacidad);
@@ -242,4 +244,11 @@ int Perfil::calcular_cambio_N(candidato a,candidato b){
 
 candidato Perfil::obtener(candidato j, int i){
     return (((*this->info)[i])->obtener_orden())[j];
+}
+
+void Perfil::guardar(string filename){
+	ofstream output(filename.c_str());
+	for (int i=0;i<info->size();i++){
+		((*info)[i])->print2(output, candidatos);
+	}
 }

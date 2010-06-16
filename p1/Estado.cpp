@@ -160,7 +160,6 @@ class Estado {
             /* Para cada preferencia, todos sus posibles cambios
              * elementales */
 
-            int contador = 0;
             for (int i=0; i<preferencias; i++){
                 for (int j=0; j + 1 < candidatos; j++){
 
@@ -182,9 +181,6 @@ class Estado {
                     if (visitado >= 0){
                         visitados->insert(visitados->begin() + visitado, nuevo);
                         q->push(nuevo);
-						
-						contador++;		// QUITAR ESTO, ES PARA CALCULAR EL
-										// BRANCHING FACTOR
                     } else {
                         delete nuevo;
                     }
@@ -192,9 +188,6 @@ class Estado {
                     delete perfil_nuevo;
                 }
             }
-
-            cout << "	branching factor: " << contador << endl;
-            cout << "	nodos generados: " << visitados->size() << endl;
         }
 
         void print(ostream& os) {
@@ -203,6 +196,7 @@ class Estado {
                 << columna		<< " "
                 << profundidad	<< endl;
         }
+
 };
 
 #endif

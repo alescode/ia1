@@ -49,6 +49,8 @@ class Preferencia {
         int compare(Preferencia& p);
 
 		int compare2(Preferencia& p);
+		
+		void print2(ostream& os, string candidatos[250]);
 };
 
 #endif

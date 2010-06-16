@@ -24,10 +24,19 @@ Preferencia::~Preferencia() {
 }
 
 void Preferencia::print(ostream& os) {
-    os << this->votantes_preferencia << endl;
+    os << this->votantes_preferencia;
 
     for (int i = 0; i < num_candidatos; i++) {
-        os << (int) this->orden[i] << " ";
+        os << " " << (int) this->orden[i];
+    }
+    os << endl;
+}
+
+void Preferencia::print2(ostream& os, string candidatos[250]) {
+    os << this->votantes_preferencia;
+
+    for (int i = 0; i < num_candidatos; i++) {
+        os << " " << candidatos[(int) this->orden[i]];
     }
     os << endl;
 }

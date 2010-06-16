@@ -5,7 +5,9 @@
 #include <queue>
 #include <list>
 #include "Estado.cpp"
+#include <sstream>
+#include <cstring>
 
-list<Estado> BFS(Perfil *perfil_inicial, bool all);
+list<candidato> BFS(Perfil *perfil_inicial, bool all);
 
 #endif

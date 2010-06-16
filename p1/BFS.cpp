@@ -5,11 +5,16 @@ using namespace std;
 extern int num_candidatos;
 extern int num_votantes;
 extern string final;
+extern string candidatos[250];
 
-list<Estado> BFS(Perfil *perfil_inicial, bool all){
+int num_generados;
+int num_expandidos;
+int num_cambios;
 
+list<candidato> BFS(Perfil *perfil_inicial, bool all){
+	cout << "final: " << final << endl;
 	queue<Estado*> *q = new queue<Estado*>();
-	list<Estado> metas;
+	list<candidato> metas;
 	vector<Estado*> visitados;
 	
 	Perfil *perfil_padre = NULL;
@@ -18,26 +23,22 @@ list<Estado> BFS(Perfil *perfil_inicial, bool all){
 
 	perfil_inicial->crear_N();
 
-	int frontera = 0;	// Se utiliza para no expandir nodos mas alla de un goal
-
 	/* Encolamos el estado inicial */
 	Estado *n = new Estado(NULL, 0, 0 , 0);
 	q->push(n);
 
 	int iteraciones = 0;
-	int expandidos = 0;
 
 	while(!q->empty()
 			&& (metas.empty()
-				|| (metas.front().obtener_profundidad()
-					== (*q->front()).obtener_profundidad())
+				|| (num_cambios == (*q->front()).obtener_profundidad())
 				)
 		)
 	{	
-		cout << "iter: " << iteraciones++ << endl;
-
 		n = q->front();
 		q->pop();
+
+		num_cambios = n->obtener_profundidad();
 
 		/* Verificamos si el padre del nodo anterior es el mismo de este */
 		if (!padre_anterior){
@@ -63,15 +64,22 @@ list<Estado> BFS(Perfil *perfil_inicial, bool all){
 
 		perfil_actual->obtener_N();
 
-		if (perfil_actual->calcular_ganador_dodgson() != NO_GANADOR){
+		candidato ganador = perfil_actual->calcular_ganador_dodgson();
+		if (ganador != NO_GANADOR){
 			/* Hemos llegado a un goal */
-			cout << "	gano el " << (int)perfil_actual->calcular_ganador_dodgson() << endl;
-			metas.push_back(*n);
-			n->print(cout);
 
+			metas.push_back(ganador);
+
+			string filename;
 			if (!all){
+				/* Guardamos el perfil actual en final */
+				filename = final;
 				break;
+			} else {
+				filename = candidatos[(int)ganador] + "-" + final;
+				/* Guardamos el perfil actual en <ganador>-<final> */
 			}
+			perfil_actual->guardar(filename);
 
 		} else if (metas.empty()){
 			/* No expandimos si hemos conseguido una meta, sus hijos
@@ -79,18 +87,17 @@ list<Estado> BFS(Perfil *perfil_inicial, bool all){
 			 */
 			n->expandir(q, perfil_actual, num_candidatos,
 						&visitados, perfil_inicial);
-			expandidos++;
+			num_expandidos++;
 		}
-		
-		cout << "	nivel: " << n->obtener_profundidad() << endl;
-		cout << "	cola: " << (*q).size() << endl;
-		cout << "	expandidos: " << expandidos << endl;
-		
+
 		delete perfil_actual;
 	}
 	
 	for (int i=0;i<visitados.size();i++){
 		delete visitados[i];
 	}
+
+	num_generados = visitados.size();
+	
 	return metas;
 }

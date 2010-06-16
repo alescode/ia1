@@ -10,13 +10,19 @@ using namespace std;
 
 int num_candidatos;
 int num_votantes;
-string final;
+string final;				/* Nombre de archivo para colocar la salida */
+string candidatos[250];
+
+extern int num_generados;
+extern int num_expandidos;
+extern int num_cambios;
+
 
 int main(int argc, char* argv[]){
 	char algoritmo = NO_ALGORITMO;
 	bool all = false;
 	bool ok = true;
-	string filename, final;
+	string filename;
 
 	filename = "";
 
@@ -91,10 +97,7 @@ int main(int argc, char* argv[]){
 
 	/* vector y map que permiten la traduccion entre candidatos y si posicion
 	 */
-	vector<string> candidatos;
 	map<string,unsigned char> indice_candidatos;
-
-	candidatos.resize(num_candidatos);
 
 	/* Leemos todos los candidatos y hacemos las respectivas
 	 * asociaciones de indice
@@ -130,18 +133,33 @@ int main(int argc, char* argv[]){
 		num_votantes += num_preferencia;
 	}
 
-	cout << "votantes " << num_votantes << endl;
-
 	file.close();
-
-    cout << (int)algoritmo << endl;
+	
+	list<candidato> resultados;
 	switch (algoritmo) {
-        case 1:
-            BFS(p, all);
-            break;
-        case 2:
-            IDAestrella(p, all);
-    }
+		case 1:
+			resultados = BFS(p, all);
 
+			break;
+		case 2:
+			//resultados = IDAestrella(p, all);
+			break;
+	}
+	cout << "Dogson winner:";
+	
+	resultados.sort();
+	while(!resultados.empty()){
+		candidato s = resultados.front();
+		cout << " " << candidatos[s];
+		
+		while(s == resultados.front())
+			resultados.pop_front();
+	}
+	
+	cout << endl << "Num cambios elementales: " << num_cambios
+			<< endl << "Nodos generados: " << num_generados
+			<< endl << "Nodos expandidos: " << num_expandidos
+			<< endl;
+	
 	return 0;
 }
