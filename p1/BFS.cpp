@@ -78,12 +78,16 @@ list<Estado> BFS(Perfil *perfil_inicial, bool all){
 			n->expandir(q, perfil_actual, num_candidatos, &visitados, perfil_inicial);
 			expandidos++;
 		}
-
+		
 		cout << "	nivel: " << n->obtener_profundidad() << endl;
 		cout << "	cola: " << (*q).size() << endl;
 		cout << "	expandidos: " << expandidos << endl;
+
 		delete perfil_actual;
 	}
 
+	for (int i=0;i<visitados.size();i++){
+		delete visitados[i];
+	}
 	return metas;
 }

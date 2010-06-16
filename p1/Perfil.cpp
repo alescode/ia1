@@ -157,7 +157,6 @@ int Perfil::obtener_num_preferencias(){
 
 void Perfil::obtener_N() {
     for (int i = 0; i < num_candidatos; i++) {
-        N[i] = new int[num_candidatos];
         memset(N[i], 0, num_candidatos * sizeof(int));
     }
 
@@ -236,57 +235,3 @@ int Perfil::calcular_cambio_N(candidato a,candidato b){
 candidato Perfil::obtener(candidato j, int i){
     return (((*this->info)[i])->obtener_orden())[j];
 }
-
-/*
-   int main(void) {
-
-   candidato* c = new candidato[4];
-   candidato cc[] = {0, 1, 2, 3 };
-   memcpy(c, cc, 4*sizeof(candidato));
-
-   candidato* d = new candidato[4];
-   candidato dd[] = {0, 3, 1, 2};
-   memcpy(d, dd, 4*sizeof(candidato));
-
-   candidato* e = new candidato[4];
-   candidato ee[] = {1, 2, 0, 3};
-   memcpy(e, ee, 4*sizeof(candidato));
-
-   candidato* f = new candidato[4];
-   candidato ff[] = {2, 0, 1, 3};
-   memcpy(f, ff, 4*sizeof(candidato));
-
-   candidato* g = new candidato[4];
-   candidato gg[] = {3, 0, 1, 2};
-   memcpy(g, gg, 4*sizeof(candidato));
-
-   candidato* h = new candidato[4];
-   candidato hh[] = {3, 1, 2, 0};
-   memcpy(h, hh, 4*sizeof(candidato));
-
-   candidato* i = new candidato[4];
-   candidato ii[] = {3, 2, 0, 1};
-   memcpy(i, ii, 4*sizeof(candidato));
-
-   Preferencia* p1 = new Preferencia(2,c);
-   Preferencia* p2 = new Preferencia(1,d);
-   Preferencia* p3 = new Preferencia(2,e);
-   Preferencia* p4 = new Preferencia(2,f);
-   Preferencia* p5 = new Preferencia(1,g);
-   Preferencia* p6 = new Preferencia(2,h);
-   Preferencia* p7 = new Preferencia(2,i);
-
-   Perfil* p = new Perfil();
-   p->agregar_preferencia(p2);
-   p->agregar_preferencia(p1);
-   p->agregar_preferencia(p4);
-   p->agregar_preferencia(p3);
-   p->agregar_preferencia(p5);
-   p->agregar_preferencia(p6);
-   p->agregar_preferencia(p7);
-
-   p->print(cout);
-   p->aplicar_cambio_elemental(1,1);
-   p->print(cout);
-   }
-   */

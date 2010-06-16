@@ -134,7 +134,7 @@ class Estado {
 
                     if (comparacion == 0) {
                         //cout << "prop: " << contador_no_resueltos/contador_total << endl;
-
+						delete p_visitado;
                         return -(izq+1);
                     } else if (comparacion < 0){
                         izq = med+1;
