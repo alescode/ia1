@@ -26,14 +26,14 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
 
     for (int i=0; i < preferencias; i++){
         for (int j=0; j + 1 < num_candidatos; j++){
-            p->aplicar_cambio_elemental(j, i);
+            int busqueda = p->aplicar_cambio_elemental(j, i);
             p->obtener_N();
 
             p->print(cout);
             cout << "APLICANDO " << j << " en preferencia " << i << endl;
 
             nuevo_limite = IDFS(g + 1, limite, p, metas);
-            p->desaplicar_cambio_elemental(j, i);
+            p->desaplicar_cambio_elemental(j, busqueda);
 
             if (!metas->empty()) {
                 return nuevo_limite;
