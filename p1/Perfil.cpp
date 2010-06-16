@@ -253,3 +253,8 @@ void Perfil::guardar(string filename){
 		((*info)[i])->print2(output, candidatos);
 	}
 }
+
+void Perfil::swap_N(candidato i, candidato j){
+	N[i][j]--;
+	N[j][i]++;
+}

@@ -166,9 +166,9 @@ class Estado {
                     Estado* nuevo = new Estado(this, j, i, profundidad + 1);
                     nuevo->h = 0;
 
-                    //					contador++;
-                    //					q->push(nuevo);
-                    //					continue;
+                    
+					//					q->push(nuevo);
+					//					continue;
 
                     Perfil* perfil_nuevo = new Perfil(*p);
 

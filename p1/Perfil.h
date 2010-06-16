@@ -64,6 +64,8 @@ class Perfil {
 		candidato obtener(candidato j, int i);
 
 		void guardar(string filename);
+		
+		void swap_N(candidato i, candidato j);
 };
 
 #endif

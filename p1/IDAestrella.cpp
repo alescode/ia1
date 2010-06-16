@@ -9,7 +9,7 @@ extern int num_generados;
 extern int num_expandidos;
 extern int num_cambios;
 
-bool alll;
+bool todos;
 
 int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
 
@@ -17,16 +17,9 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
     if (f > limite)
         return f;
 
-	p->obtener_N();
     candidato ganador = p->calcular_ganador_dodgson();
 
     if (ganador != NO_GANADOR) {
-<<<<<<< HEAD
-
-=======
-        cout << "GANADOR" << endl;
-        cout << g << endl;
->>>>>>> aa96d84c6de63f8d3c42da35be3e66bdb42438f7
         num_cambios = g;
         metas->push_back(ganador);
 
@@ -40,35 +33,36 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
      * elementales */
 
     num_expandidos++;
-    for (int i=0; i < preferencias; i++){
-        for (int j=0; j + 1 < num_candidatos; j++){
-            int busqueda = p->aplicar_cambio_elemental(j, i);
-
-            num_generados++;
-
-            //p->print(cout);
-            //cout << "APLICANDO " << j << " en preferencia " << i << endl;
-
-            nuevo_limite = IDFS(g + 1, limite, p, metas);
-
-            p->desaplicar_cambio_elemental(j, busqueda);
-
-            if (!alll && !metas->empty()) {
-                return nuevo_limite;
-            }
-        }
-    }
-    return nuevo_limite;
+	for (int i=0; i < preferencias; i++){
+		for (int j=0; j + 1 < num_candidatos; j++){
+			num_generados++;
+			
+			/* Aplicamos el cambio en el perfil */
+			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
+			int busqueda = p->aplicar_cambio_elemental(j, i);
+			
+			nuevo_limite = IDFS(g + 1, limite, p, metas);
+			
+			/* Desaplicamos el cambio en el perfil */
+			p->desaplicar_cambio_elemental(j, busqueda);
+			p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
+			
+			if (!todos && !metas->empty()) {
+				return nuevo_limite;
+			}
+		}
+	}
+	
+	return nuevo_limite;
 }
 
 list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
-	alll = all;
+	todos = all;
 	
     list<candidato>* metas = new list<candidato>;
 
     perfil_inicial->crear_N();
     perfil_inicial->obtener_N();
-        perfil_inicial->imprimir_N();
 
     int limite_f = perfil_inicial->h();
 
@@ -76,6 +70,6 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
         cout << limite_f << endl;
         limite_f = IDFS(0, limite_f, perfil_inicial, metas);
     }
-    cout << limite_f << endl;
+    //cout << limite_f << endl;
     return *metas;
 }
