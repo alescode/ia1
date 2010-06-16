@@ -1,11 +1,15 @@
+#ifndef _ESTADO
+	#define _ESTADO
+
 #include <cstring>
 #include <stack>
 #include <queue>
 #include <cmath>
-#include "Perfil.cpp"
+#include "Perfil.h"
 
 #define NO_VISITADO -1
 #define VISITADO -2
+
 
 class Estado {
     private:
@@ -200,3 +204,5 @@ class Estado {
                 << profundidad	<< endl;
         }
 };
+
+#endif

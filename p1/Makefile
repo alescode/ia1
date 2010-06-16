@@ -7,7 +7,7 @@ CLASES := Estado.o Perfil.o Preferencia.o
 
 all: dodgson
 dodgson: dodgson.cpp $(CLASES) $(ALGORITMOS)
-	$(CC) dodgson.cpp -o dodgson
+	$(CC) dodgson.cpp $(CLASES) $(ALGORITMOS) -o dodgson
 
 $(ALGORITMOS): $(CLASES)
 clean:

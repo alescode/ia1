@@ -1,10 +1,13 @@
-#include <string>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string.h>
-#include <cmath>
-#include <limits>
+
+#ifndef _PREFERENCIA
+	#define _PREFERENCIA
+	#include <string>
+	#include <iostream>
+	#include <vector>
+	#include <algorithm>
+	#include <string.h>
+	#include <cmath>
+	#include <limits>
 
 #define MAX_CANDIDATOS 250
 #define NO_GANADOR 255
@@ -48,3 +51,4 @@ class Preferencia {
 		int compare2(Preferencia& p);
 };
 
+#endif

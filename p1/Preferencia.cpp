@@ -74,4 +74,3 @@ int Preferencia::compare2(Preferencia& p){
 
     return dif;
 }
-

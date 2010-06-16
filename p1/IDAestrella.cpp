@@ -1,4 +1,4 @@
-#include "BFS.cpp"
+#include "IDAestrella.h"
 
 using namespace std;
 
@@ -87,6 +87,6 @@ list<Estado> IDAestrella(Perfil *perfil_inicial, bool all){
 		cout << "	expandidos: " << expandidos << endl;
 		delete perfil_actual;
 	}
-#endif
 	return metas;
+#endif
 }

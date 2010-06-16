@@ -1,3 +1,6 @@
+#ifndef _PERFIL
+	#define _PERFIL
+
 #include "Preferencia.h"
 
 class Perfil {
@@ -56,3 +59,5 @@ class Perfil {
 
 		 candidato obtener(candidato j, int i);
 };
+
+#endif
