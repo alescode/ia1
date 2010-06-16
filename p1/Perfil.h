@@ -20,7 +20,7 @@ class Perfil {
         int busqueda_binaria(Preferencia* p) ;
 
         /* Insertar ordenado */
-        void agregar_preferencia(Preferencia* p) ;
+        int agregar_preferencia(Preferencia* p) ;
 
 		void eliminar_preferencia(int num_preferencia) ;
 
@@ -39,7 +39,9 @@ class Perfil {
         /* Efectúa un cambio elemental entre un candidato y el siguiente
          * en la lista de preferencias indicada por num_preferencia.
          * Devuelve un nuevo perfil idéntico al original exceptuando este cambio. */
-        void aplicar_cambio_elemental(candidato num_candidato, int num_preferencia) ;
+        int aplicar_cambio_elemental(candidato num_candidato, int num_preferencia) ;
+
+		inline void desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia);
 
         int obtener_num_preferencias();
 

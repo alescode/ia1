@@ -1,6 +1,6 @@
 # Macros
 CC=g++
-CFLAGS=-g
+CFLAGS=
 ALGORITMOS := IDAestrella.o BFS.o
 CLASES := Estado.o Perfil.o Preferencia.o
 # Cuerpo

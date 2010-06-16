@@ -60,7 +60,7 @@ int Perfil::busqueda_binaria(Preferencia* p) {
 }
 
 /* Insertar ordenado */
-void Perfil::agregar_preferencia(Preferencia* p) {
+int Perfil::agregar_preferencia(Preferencia* p) {
     int buscar = busqueda_binaria(p);
 
     if (buscar >= 0) { // La preferencia existe dentro del perfil
@@ -69,11 +69,15 @@ void Perfil::agregar_preferencia(Preferencia* p) {
 
         p = (*(this->info))[buscar];
         p->crementar(num_votantes);
+
+		return buscar;
     }
     else { // Debe agregarse una nueva preferencia al perfil
         int insertar = -buscar-1; // Se obtiene el indice donde debe insertarse
         vector<Preferencia*>::iterator it = (this->info)->begin() + insertar;
         (this->info)->insert(it, p);
+		
+		return -buscar-1;
     }
 }
 
@@ -133,8 +137,8 @@ candidato Perfil::calcular_ganador_dodgson() {
 
 /* Efectúa un cambio elemental entre un candidato y el siguiente
  * en la lista de preferencias indicada por num_preferencia.
- * Devuelve un nuevo perfil idéntico al original exceptuando este cambio. */
-void Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
+ * Devuelve un nuevo perfil idéntico al original exceptuando este cambio.*/
+int Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
     Preferencia* p = (*info)[num_preferencia];
     /* Decrementamos el numero de votantes con esta preferencia */
     p->crementar(-1);
@@ -148,7 +152,11 @@ void Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferenc
         delete p;
     }
 
-    this->agregar_preferencia(unitaria);
+    return this->agregar_preferencia(unitaria);
+}
+
+inline void Perfil::desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
+	aplicar_cambio_elemental(num_candidato,num_preferencia);
 }
 
 int Perfil::obtener_num_preferencias(){
