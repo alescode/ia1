@@ -143,7 +143,7 @@ int main(int argc, char* argv[]){
 			resultados = IDAestrella(p, all);
 			break;
 	}
-	cout << "Dogson winner:";
+	cout << "Dodgson winner:";
 	
 	resultados.sort();
 	while(!resultados.empty()){
