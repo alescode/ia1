@@ -12,7 +12,6 @@ extern int num_expandidos;
 extern int num_cambios;
 
 list<candidato> BFS(Perfil *perfil_inicial, bool all){
-	cout << "final: " << final << endl;
 	queue<Estado*> *q = new queue<Estado*>();
 	list<candidato> metas;
 	vector<Estado*> visitados;
@@ -34,15 +33,18 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 				|| (num_cambios == (*q->front()).obtener_profundidad())
 				)
 		)
-	{	
+	{
 		n = q->front();
 		q->pop();
 
+		if (num_cambios != n->obtener_profundidad()){
+			cout << n->obtener_profundidad() << endl;
+		}
+		
 		num_cambios = n->obtener_profundidad();
 
 		/* Verificamos si el padre del nodo anterior es el mismo de este */
-		if (!padre_anterior){
-
+/*		if (!padre_anterior){
 			padre_anterior = n->padre();
 			perfil_padre = n->construir_padre(perfil_inicial);
 
@@ -52,12 +54,21 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 			perfil_padre = n->construir_padre(perfil_inicial);
 			padre_anterior = n->padre();
 
-		}
+		}*/
+		perfil_padre = new Perfil(*perfil_inicial);
+		
+		//perfil_padre->print(cout);
+		perfil_padre = n->construir_padre(perfil_inicial);
 
+		//perfil_padre->print(cout);
 		perfil_actual = new Perfil(*perfil_padre);
-
 		/* Construimos el perfil actual */
 		if (n->tiene_padre()) {
+			Estado* s = n;
+
+			while(s){
+				s = s->padre();
+			}
 			perfil_actual->aplicar_cambio_elemental(n->obtener_fila(),
 													n->obtener_columna());
 		}
@@ -67,7 +78,6 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		candidato ganador = perfil_actual->calcular_ganador_dodgson();
 		if (ganador != NO_GANADOR){
 			/* Hemos llegado a un goal */
-
 			metas.push_back(ganador);
 
 			string filename;
@@ -80,7 +90,6 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 				/* Guardamos el perfil actual en <ganador>-<final> */
 			}
 			perfil_actual->guardar(filename);
-
 		} else if (metas.empty()){
 			/* No expandimos si hemos conseguido una meta, sus hijos
 			 * estaran siempre en un nivel mas que estos
@@ -89,7 +98,7 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 						&visitados, perfil_inicial);
 			num_expandidos++;
 		}
-
+		
 		delete perfil_actual;
 	}
 	

@@ -62,7 +62,7 @@ class Estado {
         /* Devuelve el perfil del estado padre*/
         Perfil* construir_padre(Perfil* inicial) {
             Perfil* nuevo = new Perfil(*inicial);
-
+			
             if (this->tiene_padre()) {
                 stack<Estado*> acciones;
                 Estado* s = this;
@@ -70,12 +70,12 @@ class Estado {
 
                 /* Empilamos todas las acciones necesarias para construir el
                  *	perfil del padre */
-                while (s) {
+                while (s->padre()) {
                     acciones.push(s);
                     s = s->padre();
                     num_acciones++;
                 }
-
+				
                 /* Aplicamos todas las acciones desde el perfil inicial hasta
                  * el del padre. Notese que no es incluye la accion padre - this */
                 while (--num_acciones) {

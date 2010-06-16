@@ -9,6 +9,8 @@ extern int num_generados;
 extern int num_expandidos;
 extern int num_cambios;
 
+bool alll;
+
 int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
     int f = g + p->h();
     if (f > limite)
@@ -20,6 +22,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
         cout << g << endl;
         num_cambios = g;
         metas->push_back(ganador);
+
         return f;
     }
 
@@ -43,8 +46,12 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
 
             p->desaplicar_cambio_elemental(j, busqueda);
 
+<<<<<<< HEAD
             /*
             if (!metas->empty()) {
+=======
+            if (!alll && !metas->empty()) {
+>>>>>>> 885e9c5bdbcd6f7a7765c61909c20cb9d9258be2
                 return nuevo_limite;
             }*/
         }
@@ -53,6 +60,8 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
 }
 
 list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
+	alll = all;
+	
     list<candidato>* metas = new list<candidato>;
 
     perfil_inicial->crear_N();
