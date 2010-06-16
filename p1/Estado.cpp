@@ -176,15 +176,15 @@ class Estado {
                     perfil_nuevo->aplicar_cambio_elemental(j,i);
 
                     nuevo->h = perfil_nuevo->calcular_cambio_N(p->obtener(j,i),p->obtener(j+1,i));
-                    //cout << "h: " << nuevo->h << endl;
+					
                     int visitado = nuevo->fue_visitado(*perfil_nuevo, *visitados, inicial);
 
                     if (visitado >= 0){
                         visitados->insert(visitados->begin() + visitado, nuevo);
                         q->push(nuevo);
-
-                        contador++;		// QUITAR ESTO, ES PARA CALCULAR EL
-                        // BRANCHING FACTOR
+						
+						contador++;		// QUITAR ESTO, ES PARA CALCULAR EL
+										// BRANCHING FACTOR
                     } else {
                         delete nuevo;
                     }

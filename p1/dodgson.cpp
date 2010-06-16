@@ -10,6 +10,7 @@ using namespace std;
 
 int num_candidatos;
 int num_votantes;
+string final;
 
 int main(int argc, char* argv[]){
 	char algoritmo = NO_ALGORITMO;
