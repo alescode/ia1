@@ -12,12 +12,16 @@ extern int num_cambios;
 bool alll;
 
 int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
+
     int f = g + p->h();
     if (f > limite)
         return f;
 
+	p->obtener_N();
     candidato ganador = p->calcular_ganador_dodgson();
+
     if (ganador != NO_GANADOR) {
+
         num_cambios = g;
         metas->push_back(ganador);
 
@@ -34,7 +38,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
     for (int i=0; i < preferencias; i++){
         for (int j=0; j + 1 < num_candidatos; j++){
             int busqueda = p->aplicar_cambio_elemental(j, i);
-            p->obtener_N();
+
             num_generados++;
 
             //p->print(cout);

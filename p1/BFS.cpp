@@ -44,7 +44,7 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		num_cambios = n->obtener_profundidad();
 
 		/* Verificamos si el padre del nodo anterior es el mismo de este */
-/*		if (!padre_anterior){
+		if (!padre_anterior){
 			padre_anterior = n->padre();
 			perfil_padre = n->construir_padre(perfil_inicial);
 
@@ -53,14 +53,8 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 			delete perfil_padre;
 			perfil_padre = n->construir_padre(perfil_inicial);
 			padre_anterior = n->padre();
+		}
 
-		}*/
-		perfil_padre = new Perfil(*perfil_inicial);
-		
-		//perfil_padre->print(cout);
-		perfil_padre = n->construir_padre(perfil_inicial);
-
-		//perfil_padre->print(cout);
 		perfil_actual = new Perfil(*perfil_padre);
 		/* Construimos el perfil actual */
 		if (n->tiene_padre()) {
