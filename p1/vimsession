@@ -8,8 +8,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Estado.cpp
-badd +0 Estado.h
+badd +1 Estado.cpp
+badd +1 Estado.h
+badd +43 BFS.cpp
 args Estado.cpp
 set lines=38 columns=115
 edit Estado.cpp
@@ -32,11 +33,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 153 - ((24 * winheight(0) + 18) / 36)
+let s:l = 14 - ((13 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-153
+14
 normal! 0
 wincmd w
 argglobal
@@ -50,13 +51,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 12 - ((11 * winheight(0) + 18) / 36)
+let s:l = 60 - ((31 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 0
+60
+normal! 011l
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 57 + 57) / 115)
 exe 'vert 2resize ' . ((&columns * 57 + 57) / 115)
 tabnext 1

@@ -9,25 +9,6 @@ Estado::Estado(Estado* a, int f, int c, int p){
 
 Estado::~Estado() {}
 
-int Estado::obtener_profundidad(){
-    return profundidad;
-}
-
-inline Estado* Estado::padre(){
-    return prog;
-}
-
-inline bool Estado::tiene_padre(){
-    return prog != NULL;
-}
-
-inline int Estado::obtener_fila(){
-    return fila;
-}
-
-inline int Estado::obtener_columna(){
-    return columna;
-}
 
 Perfil* Estado::construir_padre(Perfil* inicial) {
     Perfil* nuevo = new Perfil(*inicial);
