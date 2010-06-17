@@ -1,4 +1,3 @@
-
 #ifndef _PREFERENCIA
 	#define _PREFERENCIA
 	#include <string>
@@ -34,15 +33,25 @@ class Preferencia {
 
 		void print(ostream& os) ;
 
-        void resetear(int size) ;
-
         //Preferencia& operator= (Preferencia& p) ;
-        
-        int obtener_votantes();
 
-        candidato* obtener_orden();
+        inline void resetear(int size) {
+            memset(this->orden, 0, size);
+        }
 
-		void crementar(int signo);
+        //Preferencia& operator= (Preferencia& p) {}
+
+        inline int obtener_votantes(){
+            return this->votantes_preferencia;
+        }
+
+        inline candidato* obtener_orden(){
+            return this->orden;
+        }
+
+        inline void crementar(int signo){
+            this->votantes_preferencia += signo;
+        }
 
         void cambio_elemental(unsigned char fila);
 		

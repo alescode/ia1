@@ -45,15 +45,19 @@ class Perfil {
 
 		void desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia);
 
-        int obtener_num_preferencias();
+        inline int obtener_num_preferencias(){
+            return info->size();
+        }
+
+        inline int deficit(candidato x, candidato y) {
+            return max(0, ((num_votantes + 2)/2) - N[x][y]); //techo de n+1/2
+        }
 
         void obtener_N() ;
 
 		int compare(Perfil& p);
 
         int funcion_de_clasificacion() ;
-
-        int deficit(candidato x, candidato y) ;
 
         double Tprima(candidato x) ;
 
@@ -65,7 +69,10 @@ class Perfil {
 
 		void guardar(string filename);
 		
-		void swap_N(candidato i, candidato j);
+        inline void swap_N(candidato i, candidato j){
+            N[i][j]--;
+            N[j][i]++;
+        }
 };
 
 #endif

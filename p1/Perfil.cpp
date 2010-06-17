@@ -9,12 +9,12 @@ Perfil::Perfil (int capacidad) {
 }
 
 Perfil::~Perfil () {
-    //            cout << "Eliminando perfil" << endl;
+    //cout << "Eliminando perfil" << endl;
     int size = (this->info)->size();
     for (int i = 0; i < size; i++)
         delete (*(this->info))[i];
     delete this->info;
-    N = NULL; //No borrado
+    N = NULL; //No se libera el espacio de la matriz
 }
 
 Perfil::Perfil (const Perfil& p) {
@@ -144,7 +144,6 @@ int Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferenci
 
 	Preferencia* p = (*info)[num_preferencia];
     /* Decrementamos el numero de votantes con esta preferencia */
-
     p->crementar(-1);
     Preferencia* unitaria = new Preferencia(*p, true);
     unitaria->cambio_elemental(num_candidato);
@@ -156,14 +155,6 @@ int Perfil::aplicar_cambio_elemental(candidato num_candidato, int num_preferenci
     }
 
     return this->agregar_preferencia(unitaria);
-}
-
-void Perfil::desaplicar_cambio_elemental(candidato num_candidato, int num_preferencia) {
-	aplicar_cambio_elemental(num_candidato,num_preferencia);
-}
-
-int Perfil::obtener_num_preferencias(){
-    return info->size();
 }
 
 void Perfil::obtener_N() {
@@ -195,10 +186,6 @@ int Perfil::compare(Perfil& p){
         dif = (*info)[i]->compare2(*(*p.info)[i]);
     }
     return dif;
-}
-
- int Perfil::deficit(candidato x, candidato y) {
-    return max(0, ((num_votantes + 2)/2) - N[x][y]); //techo de n+1/2
 }
 
  double Perfil::Tprima(candidato x) {
@@ -252,9 +239,4 @@ void Perfil::guardar(string filename){
 	for (int i=0;i<info->size();i++){
 		((*info)[i])->print2(output, candidatos);
 	}
-}
-
-void Perfil::swap_N(candidato i, candidato j){
-	N[i][j]--;
-	N[j][i]++;
 }

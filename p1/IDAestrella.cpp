@@ -44,7 +44,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
 			nuevo_limite = IDFS(g + 1, limite, p, metas);
 			
 			/* Desaplicamos el cambio en el perfil */
-			p->desaplicar_cambio_elemental(j, busqueda);
+			p->aplicar_cambio_elemental(j, busqueda);
 			p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
 			
 			if (!todos && !metas->empty()) {

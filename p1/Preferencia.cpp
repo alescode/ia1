@@ -41,24 +41,6 @@ void Preferencia::print2(ostream& os, string candidatos[250]) {
     os << endl;
 }
 
-void Preferencia::resetear(int size) {
-    memset(this->orden, 0, size);
-}
-
-//Preferencia& operator= (Preferencia& p) {}
-
-int Preferencia::obtener_votantes(){
-    return this->votantes_preferencia;
-}
-
-candidato* Preferencia::obtener_orden(){
-    return this->orden;
-}
-
- void Preferencia::crementar(int signo){
-    this->votantes_preferencia += signo;
-}
-
 void Preferencia::cambio_elemental(unsigned char fila){
     candidato tmp = this->orden[fila];
     this->orden[fila] = this->orden[fila+1];
