@@ -4,7 +4,7 @@
 #include <iostream>
 #include <queue>
 #include <list>
-#include "Estado.cpp"
+#include "Estado.h"
 #include <sstream>
 #include <cstring>
 

@@ -8,20 +8,20 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +62 IDAestrella.cpp
-badd +29 ~/idastar.py
-badd +158 Estado.cpp
-badd +2 Perfil.cpp
-badd +56 Perfil.h
-badd +80 BFS.cpp
-badd +143 dodgson.cpp
-badd +9 IDAestrella.h
-args IDAestrella.cpp
+badd +0 Estado.cpp
+badd +0 Estado.h
+args Estado.cpp
 set lines=38 columns=115
-edit Perfil.cpp
+edit Estado.cpp
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 wincmd t
 set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 57 + 57) / 115)
+exe 'vert 2resize ' . ((&columns * 57 + 57) / 115)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -32,17 +32,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 218 - ((24 * winheight(0) + 18) / 36)
+let s:l = 153 - ((24 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-218
-normal! 05l
-tabedit IDAestrella.h
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
+153
+normal! 0
+wincmd w
 argglobal
+edit Estado.h
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -52,73 +50,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 9 - ((8 * winheight(0) + 17) / 35)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-9
-normal! 015l
-tabedit IDAestrella.cpp
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 20 - ((10 * winheight(0) + 17) / 35)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-20
-normal! 08l
-tabedit dodgson.cpp
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 149 - ((20 * winheight(0) + 17) / 35)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-149
-normal! 06l
-tabedit BFS.cpp
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 12 - ((11 * winheight(0) + 17) / 35)
+let s:l = 12 - ((11 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 12
-normal! 06l
-tabnext 3
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 57 + 57) / 115)
+exe 'vert 2resize ' . ((&columns * 57 + 57) / 115)
+tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif

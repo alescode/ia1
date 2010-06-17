@@ -67,7 +67,6 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
     int limite_f = perfil_inicial->h();
 
     while (metas->empty()) {
-        cout << limite_f << endl;
         limite_f = IDFS(0, limite_f, perfil_inicial, metas);
     }
     //cout << limite_f << endl;

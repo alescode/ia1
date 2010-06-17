@@ -4,7 +4,7 @@
 #include <iostream>
 #include <queue>
 #include <list>
-#include "Estado.cpp"
+#include "Estado.h"
 
 list<candidato> IDAestrella(Perfil *perfil_inicial, bool all);
 

@@ -37,9 +37,10 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		n = q->front();
 		q->pop();
 
+        /*
 		if (num_cambios != n->obtener_profundidad()){
 			cout << n->obtener_profundidad() << endl;
-		}
+		}*/
 		
 		num_cambios = n->obtener_profundidad();
 
