@@ -11,7 +11,7 @@ extern int num_cambios;
 
 bool todos;
 
-int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
+int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio>* visitados) {
 
     int f = g + p->h();
     if (f > limite)
@@ -41,7 +41,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas) {
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
-			nuevo_limite = IDFS(g + 1, limite, p, metas);
+			nuevo_limite = IDFS(g + 1, limite, p, metas, visitados);
 			
 			/* Desaplicamos el cambio en el perfil */
 			p->aplicar_cambio_elemental(j, busqueda);
@@ -65,10 +65,13 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
     perfil_inicial->obtener_N();
 
     int limite_f = perfil_inicial->h();
+    stack<Cambio>* visitados = new stack<Cambio>;
 
     while (metas->empty()) {
-        limite_f = IDFS(0, limite_f, perfil_inicial, metas);
+        limite_f = IDFS(0, limite_f, perfil_inicial, metas, visitados);
     }
+
+    cout << visitados->empty() << endl;
     //cout << limite_f << endl;
     return *metas;
 }
