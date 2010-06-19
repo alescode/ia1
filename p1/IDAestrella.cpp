@@ -36,17 +36,21 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* v
 	for (int i=0; i < preferencias; i++){
 		for (unsigned char j = 0; j + 1 < num_candidatos; j++){
 			num_generados++;
-			
-            if (!visitados->empty()) {
-                Cambio* mas_reciente = visitados->top();
-                if (j == mas_reciente->fila || i == mas_reciente->columna)
-                    continue;
-            }
 
 			/* Aplicamos el cambio en el perfil */
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
+            if (!visitados->empty()) {
+                Cambio* mas_reciente = visitados->top();
+                if (j == mas_reciente->fila || busqueda == mas_reciente->columna) {
+                    /* Desaplicamos el cambio en el perfil */
+                    p->aplicar_cambio_elemental(j, busqueda);
+                    p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
+                    continue;
+                }
+            }
+
             Cambio* nuevo_cambio = new Cambio;
             nuevo_cambio->fila = j;
             nuevo_cambio->columna = i;
@@ -84,7 +88,8 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
         
         //Se vacia la pila de visitados para reiniciar el algoritmo
         while (!visitados->empty()) {
-            cout << (int) visitados->top()->fila << visitados->top()->columna << endl;
+            //cout << (int) visitados->top()->fila << visitados->top()->columna << endl;
+            delete visitados->top();
             visitados->pop();
         }
     }
