@@ -70,7 +70,7 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 		candidato ganador = perfil_actual->calcular_ganador_dodgson();
 		if (ganador != NO_GANADOR){
 			/* Hemos llegado a un goal */
-			metas.push_back(pair<candidato, Perfil*>(ganador, perfil_actual));
+			metas.push_back(pair<candidato, Estado>(ganador, *padre_anterior));
             if (!all)
                 break;
 		} else if (metas.empty()) {

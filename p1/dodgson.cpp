@@ -145,7 +145,7 @@ int main(int argc, char* argv[]){
 	}
 	cout << "Dodgson winner:";
 	
-	resultados.sort();
+	//resultados.sort();
 	while (!resultados.empty()) {
 		candidato s = resultados.front().first;
 		cout << " " << candidatos[s];

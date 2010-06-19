@@ -8,11 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 IDAestrella.cpp
-badd +0 IDAestrella.h
-args IDAestrella.cpp
+badd +0 BFS.cpp
+badd +0 dodgson.cpp
+args BFS.cpp
 set lines=38 columns=115
-edit IDAestrella.cpp
+edit BFS.cpp
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -26,13 +26,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 05l
-tabedit IDAestrella.h
+1
+normal! 0
+tabedit dodgson.cpp
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
