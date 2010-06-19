@@ -28,12 +28,9 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 
 	int iteraciones = 0;
 
-	while(!q->empty()
-			&& (metas.empty()
-				|| (num_cambios == (*q->front()).obtener_profundidad())
-				)
-		)
-	{
+	while (!q->empty()
+		  && (metas.empty()
+		     || num_cambios == q->front()->obtener_profundidad())) {
 		n = q->front();
 		q->pop();
 
