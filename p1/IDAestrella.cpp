@@ -14,8 +14,13 @@ bool todos;
 int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* visitados) {
 
     int f = g + p->h();
-    if (f > limite)
+    if (f > limite) {
+        if (!visitados->empty()) {
+            delete visitados->top();
+            visitados->pop(); 
+        }
         return f;
+    }
 
     candidato ganador = p->calcular_ganador_dodgson();
 

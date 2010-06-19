@@ -3,21 +3,16 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Desktop/ia1/p1
+cd ~/Computation/Materias/ia1/p1
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +14 Estado.cpp
-badd +60 Estado.h
-badd +43 BFS.cpp
-badd +183 Perfil.cpp
-badd +1 Perfil.h
-badd +2 Preferencia.cpp
-badd +0 Preferencia.h
-args Estado.cpp
+badd +0 IDAestrella.cpp
+badd +0 IDAestrella.h
+args IDAestrella.cpp
 set lines=38 columns=115
-edit Perfil.h
+edit IDAestrella.cpp
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -31,13 +26,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((34 * winheight(0) + 18) / 36)
+let s:l = 5 - ((4 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 08l
-tabedit Preferencia.h
+5
+normal! 05l
+tabedit IDAestrella.h
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -51,12 +46,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 62 - ((26 * winheight(0) + 17) / 35)
+let s:l = 1 - ((0 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
-normal! 048l
+1
+normal! 0
 tabnext 2
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
