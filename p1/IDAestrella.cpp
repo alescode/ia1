@@ -11,13 +11,13 @@ extern int num_cambios;
 
 bool todos;
 
-int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* visitados) {
+int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* visitados) {
 
     int f = g + p->h();
     if (f > limite) {
         if (!visitados->empty()) {
-            delete visitados->top();
-            visitados->pop(); 
+            delete visitados->back();
+            visitados->pop_back(); 
         }
         return f;
     }
@@ -27,6 +27,12 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* v
     if (ganador != NO_GANADOR) {
         num_cambios = g;
         metas->push_back(ganador);
+
+        //OJO AQUI TAMBIEN?
+        if (!visitados->empty()) {
+            delete visitados->back();
+            visitados->pop_back(); 
+        }
 
         return f;
     }
@@ -47,7 +53,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* v
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
             if (!visitados->empty()) {
-                Cambio* mas_reciente = visitados->top();
+                Cambio* mas_reciente = visitados->back();
                 if (j == mas_reciente->fila || busqueda == mas_reciente->columna) {
                     /* Desaplicamos el cambio en el perfil */
                     p->aplicar_cambio_elemental(j, busqueda);
@@ -59,7 +65,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* v
             Cambio* nuevo_cambio = new Cambio;
             nuevo_cambio->fila = j;
             nuevo_cambio->columna = i;
-            visitados->push(nuevo_cambio);
+            visitados->push_back(nuevo_cambio);
 
 			nuevo_limite = IDFS(g + 1, limite, p, metas, visitados);
 			
@@ -85,7 +91,7 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
     perfil_inicial->obtener_N();
 
     int limite_f = perfil_inicial->h();
-    stack<Cambio*>* visitados = new stack<Cambio*>;
+    list<Cambio*>* visitados = new list<Cambio*>;
 
 
     while (metas->empty()) {
@@ -93,9 +99,9 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
         
         //Se vacia la pila de visitados para reiniciar el algoritmo
         while (!visitados->empty()) {
-            //cout << (int) visitados->top()->fila << visitados->top()->columna << endl;
-            delete visitados->top();
-            visitados->pop();
+            //cout << (int) visitados->back()->fila << visitados->back()->columna << endl;
+            delete visitados->back();
+            visitados->pop_back();
         }
     }
 
