@@ -40,7 +40,7 @@ int main(int argc, char* argv[]){
 		} else if (!strcmp(argv[i],"-all")){
 
 			/* Indica que se deben devolver todos los optimos */
-			if (!all){
+			if (!all) {
 				all = true;
 			} else {
 				ok = false;	// Caso de doble asignacion
@@ -49,7 +49,7 @@ int main(int argc, char* argv[]){
 		} else if (!strcmp(argv[i],"-final")){
 
 			/* Asignacion de archivo de salida */
-			if (++i<argc && final.size() == 0){
+			if (++i < argc && final.size() == 0){
 				final = argv[i];
 			} else {
 				ok = false; // Doble asignacion o falta de nombre
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]){
 
 	ok = ok && filename.size() && algoritmo;
 
-	if (!ok){
+	if (!ok) {
 		cout << endl
 			 << "  Uso de dodgson: "
 			 << endl << endl
@@ -103,7 +103,7 @@ int main(int argc, char* argv[]){
 	 */
 	for (int i=0; i < num_candidatos; i++){
 		file >> candidatos[i];
-		indice_candidatos.insert(pair<string,unsigned char>(candidatos[i],i));
+		indice_candidatos.insert(pair<string, unsigned char>(candidatos[i],i));
 	}
 
 	file >> num_preferencias;
@@ -134,24 +134,25 @@ int main(int argc, char* argv[]){
 
 	file.close();
 	
-	list<candidato> resultados;
+	listasoluciones resultados;
 	switch (algoritmo) {
 		case 1:
 			resultados = BFS(p, all);
 			break;
 		case 2:
-			resultados = IDAestrella(p, all);
+			//resultados = IDAestrella(p, all);
 			break;
 	}
 	cout << "Dodgson winner:";
 	
 	resultados.sort();
-	while(!resultados.empty()){
-		candidato s = resultados.front();
+	while (!resultados.empty()) {
+		candidato s = resultados.front().first;
 		cout << " " << candidatos[s];
-		
-		while(s == resultados.front())
-			resultados.pop_front();
+		do {
+            resultados.pop_front();
+        }
+		while (s == resultados.front().first);
 	}
 	
 	cout << endl << "Num cambios elementales: " << num_cambios

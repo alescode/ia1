@@ -11,9 +11,9 @@ extern int num_generados;
 extern int num_expandidos;
 extern int num_cambios;
 
-list<candidato> BFS(Perfil *perfil_inicial, bool all){
+listasoluciones BFS(Perfil *perfil_inicial, bool all){
 	queue<Estado*> *q = new queue<Estado*>();
-	list<candidato> metas;
+	listasoluciones metas;
 	vector<Estado*> visitados;
 	
 	Perfil *perfil_padre = NULL;
@@ -58,7 +58,7 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		if (n->tiene_padre()) {
 			Estado* s = n;
 
-			while(s){
+			while (s) {
 				s = s->padre();
 			}
 			perfil_actual->aplicar_cambio_elemental(n->obtener_fila(),
@@ -70,19 +70,10 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		candidato ganador = perfil_actual->calcular_ganador_dodgson();
 		if (ganador != NO_GANADOR){
 			/* Hemos llegado a un goal */
-			metas.push_back(ganador);
-
-			string filename;
-			if (!all){
-				/* Guardamos el perfil actual en final */
-				filename = final;
-				break;
-			} else {
-				filename = candidatos[(int)ganador] + "-" + final;
-				/* Guardamos el perfil actual en <ganador>-<final> */
-			}
-			perfil_actual->guardar(filename);
-		} else if (metas.empty()){
+			metas.push_back(pair<candidato, Perfil*>(ganador, perfil_actual));
+            if (!all)
+                break;
+		} else if (metas.empty()) {
 			/* No expandimos si hemos conseguido una meta, sus hijos
 			 * estaran siempre en un nivel mas que estos
 			 */
