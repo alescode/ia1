@@ -11,7 +11,7 @@ extern int num_cambios;
 
 bool todos;
 
-int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio>* visitados) {
+int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio*>* visitados) {
 
     int f = g + p->h();
     if (f > limite)
@@ -34,13 +34,24 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, stack<Cambio>* vi
 
     num_expandidos++;
 	for (int i=0; i < preferencias; i++){
-		for (int j=0; j + 1 < num_candidatos; j++){
+		for (unsigned char j = 0; j + 1 < num_candidatos; j++){
 			num_generados++;
 			
+            if (!visitados->empty()) {
+                Cambio* mas_reciente = visitados->top();
+                if (j == mas_reciente->fila || i == mas_reciente->columna)
+                    continue;
+            }
+
 			/* Aplicamos el cambio en el perfil */
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
+            Cambio* nuevo_cambio = new Cambio;
+            nuevo_cambio->fila = j;
+            nuevo_cambio->columna = i;
+            visitados->push(nuevo_cambio);
+
 			nuevo_limite = IDFS(g + 1, limite, p, metas, visitados);
 			
 			/* Desaplicamos el cambio en el perfil */
@@ -65,13 +76,19 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
     perfil_inicial->obtener_N();
 
     int limite_f = perfil_inicial->h();
-    stack<Cambio>* visitados = new stack<Cambio>;
+    stack<Cambio*>* visitados = new stack<Cambio*>;
+
 
     while (metas->empty()) {
         limite_f = IDFS(0, limite_f, perfil_inicial, metas, visitados);
+        
+        //Se vacia la pila de visitados para reiniciar el algoritmo
+        while (!visitados->empty()) {
+            cout << (int) visitados->top()->fila << visitados->top()->columna << endl;
+            visitados->pop();
+        }
     }
 
-    cout << visitados->empty() << endl;
     //cout << limite_f << endl;
     return *metas;
 }
