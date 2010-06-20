@@ -5,7 +5,7 @@ using namespace std;
 extern int num_candidatos;
 extern int num_votantes;
 extern string final;
-extern string candidatos[MAX_CANDIDATOS];
+extern string candidatos[250];
 
 extern int num_generados;
 extern int num_expandidos;
@@ -34,17 +34,18 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 		n = q->front();
 		q->pop();
 
-        /*
-		if (num_cambios != n->obtener_profundidad()){
+        if (num_cambios != n->obtener_profundidad()){
 			cout << n->obtener_profundidad() << endl;
-		}*/
+		}
 		
 		num_cambios = n->obtener_profundidad();
-
+		
 		/* Verificamos si el padre del nodo anterior es el mismo de este */
+		
 		if (!padre_anterior){
+
 			padre_anterior = n->padre();
-			perfil_padre = n->construir_padre(perfil_inicial);
+			perfil_padre = new Perfil(*perfil_inicial);
 
 		} else if (!n->es_mi_padre(padre_anterior)) {
 
@@ -52,7 +53,7 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 			perfil_padre = n->construir_padre(perfil_inicial);
 			padre_anterior = n->padre();
 		}
-
+		
 		perfil_actual = new Perfil(*perfil_padre);
 		/* Construimos el perfil actual */
 		if (n->tiene_padre()) {
@@ -64,24 +65,33 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 			perfil_actual->aplicar_cambio_elemental(n->obtener_fila(),
 													n->obtener_columna());
 		}
-
+		
 		perfil_actual->obtener_N();
-
+		
 		candidato ganador = perfil_actual->calcular_ganador_dodgson();
+
 		if (ganador != NO_GANADOR){
+
 			/* Hemos llegado a un goal */
+			//n->print(cout);
 			metas.push_back(pair<candidato, Estado>(ganador, *n));
             if (!all)
                 break;
+
 		} else if (metas.empty()) {
+			
 			/* No expandimos si hemos conseguido una meta, sus hijos
 			 * estaran siempre en un nivel mas que estos
 			 */
 			n->expandir(q, perfil_actual, num_candidatos,
 						&visitados, perfil_inicial);
 			num_expandidos++;
+			
+// 			cout << "nivel: " << n->obtener_profundidad() << endl;
+// 			cout << "generados: " << q->size() + num_expandidos << endl;
+// 			cout << "expandidos: " << num_expandidos << endl;
 		}
-		
+
 		delete perfil_actual;
 	}
 	

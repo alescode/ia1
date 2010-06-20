@@ -11,9 +11,10 @@ Estado::~Estado() {}
 
 
 Perfil* Estado::construir_padre(Perfil* inicial) {
-    Perfil* nuevo = new Perfil(*inicial);
 
+    Perfil* nuevo = new Perfil(*inicial);
     if (this->tiene_padre()) {
+		
         stack<Estado*> acciones;
         Estado* s = this;
         int num_acciones = 0;
@@ -109,8 +110,8 @@ void Estado::expandir(queue<Estado*>* q, Perfil *p, int candidatos,
             Estado* nuevo = new Estado(this, j, i, profundidad + 1);
             nuevo->clasificacion = 0;
 
-            //					q->push(nuevo);
-            //					continue;
+            //	q->push(nuevo);
+            //	continue;
 
             Perfil* perfil_nuevo = new Perfil(*p);
 
@@ -130,4 +131,11 @@ void Estado::expandir(queue<Estado*>* q, Perfil *p, int candidatos,
             delete perfil_nuevo;
         }
     }
+}
+
+inline void Estado::print(ostream& os) {
+    os << prog			<< " "
+        << int(fila)		<< " "
+        << columna		<< " "
+        << profundidad	<< endl;
 }

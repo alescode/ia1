@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 00:10
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 00:46
 entering extended mode
 **ia1proy1.tex
 (./ia1proy1.tex
@@ -383,27 +383,22 @@ Package: amsfonts 2001/10/25 v2.2f
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
 ))
-(/usr/local/gwTeX/texmf.texlive/tex/latex/setspace/setspace.sty
-Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
-
-Package: `setspace' 6.7 <2000/12/01>
-) (./ia1proy1.aux)
+(./ia1proy1.aux)
 \openout1 = `ia1proy1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-
-(/usr/local/gwTeX/texmf.texlive/tex/context/base/supp-pdf.tex
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+ (/usr/local/gwTeX/texmf.texlive/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen124
@@ -417,34 +412,35 @@ LaTeX Font Info:    ... okay on input line 36.
 ) <usb.jpg, id=1, 303.38344pt x 206.27063pt>
 File: usb.jpg Graphic file (type jpg)
  <use usb.jpg>
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
 
 (/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
 
 (/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 ) [1
 
 {/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map} <./usb.jpg>] 
-[1] [2]
+[1] [2] [3]
 (./ia1proy1.aux) ) 
 Here is how much of TeX's memory you used:
- 2633 strings out of 94073
- 30988 string characters out of 1163499
- 2085237 words of memory out of 4536433
- 5900 multiletter control sequences out of 10000+50000
- 8056 words of font info for 31 fonts, out of 2000000 for 2000
+ 2615 strings out of 94073
+ 30612 string characters out of 1163499
+ 2084678 words of memory out of 4535874
+ 5875 multiletter control sequences out of 10000+50000
+ 12412 words of font info for 48 fonts, out of 2000000 for 2000
  645 hyphenation exceptions out of 5000
  27i,7n,25p,224b,215s stack positions out of 5000i,500n,6000p,200000b,50000s
 </usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmbx12
-.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/loc
-al/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr17.pfb>
-Output written on ia1proy1.pdf (3 pages, 60588 bytes).
+.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/lo
+cal/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/gwTeX/texm
+f.texlive/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on ia1proy1.pdf (4 pages, 65769 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

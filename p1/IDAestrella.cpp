@@ -11,14 +11,10 @@ extern int num_cambios;
 
 bool todos;
 
-int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* visitados) {
+int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* visitados, Perfil* inicial) {
 
     int f = g + p->h();
     if (f > limite) {
-        if (!visitados->empty()) {
-            delete visitados->back();
-            visitados->pop_back(); 
-        }
         return f;
     }
 
@@ -28,15 +24,12 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
         num_cambios = g;
         metas->push_back(ganador);
 
-        //OJO AQUI TAMBIEN?
-        if (!visitados->empty()) {
-            delete visitados->back();
-            visitados->pop_back(); 
-        }
-
         return f;
     }
 
+	//cout << visitados->next() << endl;
+	//inicial->print(cout);
+	
     int preferencias = p->obtener_num_preferencias();
     int nuevo_limite;
 
@@ -46,33 +39,60 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
     num_expandidos++;
 	for (int i=0; i < preferencias; i++){
 		for (unsigned char j = 0; j + 1 < num_candidatos; j++){
-			num_generados++;
 
-			/* Aplicamos el cambio en el perfil */
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
-            if (!visitados->empty()) {
-                Cambio* mas_reciente = visitados->back();
-                if (j == mas_reciente->fila || busqueda == mas_reciente->columna) {
-                    /* Desaplicamos el cambio en el perfil */
-                    p->aplicar_cambio_elemental(j, busqueda);
-                    p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
-                    continue;
-                }
-            }
-
-            Cambio* nuevo_cambio = new Cambio;
-            nuevo_cambio->fila = j;
-            nuevo_cambio->columna = i;
-            visitados->push_back(nuevo_cambio);
-
-			nuevo_limite = IDFS(g + 1, limite, p, metas, visitados);
+			/*
+			num_generados++;
 			
-			/* Desaplicamos el cambio en el perfil */
+
+			nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+			
 			p->aplicar_cambio_elemental(j, busqueda);
 			p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
+
+			if (!todos && !metas->empty()) {
+				return nuevo_limite;
+			}
 			
+			continue;
+			*/
+			
+			/* Comparar con los nodos visitados ancestros */
+			Perfil* s = new Perfil(*inicial);
+			
+			bool iguales = false;
+			if (s->compare(*p) == 0){
+				iguales = true;
+			} else {
+				//cout << "Hola mundo " << s->compare(*p) << endl;
+				list<Cambio*>::iterator it;
+
+				for ( it=visitados->begin() ; it != visitados->end() && !iguales; it++ ){
+					s->aplicar_cambio_elemental((*it)->fila, (*it)->columna);
+					iguales = (s->compare(*p)==0);
+				}
+			}
+			delete s;
+			
+			if (!iguales){
+				num_generados++;
+				
+				Cambio* nuevo_cambio = new Cambio();
+				nuevo_cambio->fila = j;
+				nuevo_cambio->columna = i;
+				visitados->push_back(nuevo_cambio);
+
+				nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+			
+				delete visitados->back();
+				visitados->pop_back();
+			}
+			
+			p->aplicar_cambio_elemental(j, busqueda);
+			p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
+
 			if (!todos && !metas->empty()) {
 				return nuevo_limite;
 			}
@@ -94,15 +114,10 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
     list<Cambio*>* visitados = new list<Cambio*>;
 
 
+	Perfil *p = new Perfil(*perfil_inicial);
+	
     while (metas->empty()) {
-        limite_f = IDFS(0, limite_f, perfil_inicial, metas, visitados);
-        
-        //Se vacia la pila de visitados para reiniciar el algoritmo
-        while (!visitados->empty()) {
-            //cout << (int) visitados->back()->fila << visitados->back()->columna << endl;
-            delete visitados->back();
-            visitados->pop_back();
-        }
+        limite_f = IDFS(0, limite_f, p, metas, visitados, perfil_inicial);
     }
 
     //cout << limite_f << endl;

@@ -1,0 +1,14 @@
+profile
+5 a b c d e
+11
+12 c a b d e
+11 e d c b a
+10 c a b d e
+9 d e c b a
+8 b a c d e
+7 e a b c d
+6 a e d c b
+5 e c a d b
+3 b d e c a
+3 d b c e a
+1 b d c e a

@@ -12,27 +12,6 @@
 
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}
 
-\newcommand{\y}{\ \land \ }
-\renewcommand{\o}{\ \lor \ }
-\newcommand{\no}{\neg}
-\newcommand{\eq}{\equiv}
-\newcommand{\nq}{\not\equiv}
-\newcommand{\impl}{\Rightarrow}
-\newcommand{\conseq}{\Leftarrow}
-\newcommand{\true}{\textit{true}}
-\newcommand{\false}{\textit{false}}
-\newcommand{\existe}[3]{(\exists #1 \mid #2 : #3)}
-\newcommand{\existee}[4]{(\exists !_{#1} #2 \mid #3: #4)}
-
-\newcommand{\patodo}[3]{(\forall #1 \mid #2 : #3)}
-\newcommand{\cuant}[3]{(* #1 \mid \ #2 : #3)}
-
-\usepackage{setspace}
-\onehalfspacing
-
-%Bases de datos
-\newcommand{\ms}{\texttt}
-
 \begin{document}
 
 \title{	\includegraphics[height=80pt]{usb.jpg} \\
@@ -89,7 +68,28 @@ Búsqueda}
     sobre éste.
 
 \subsubsection*{IDA*}
+    Se aplica un cambio elemental sobre
+    el perfil actual, y se explora el perfil hijo. Posteriormente,
+    se deshace este cambio elemental; este proceso se repite para
+   cada transición posible.
 
+\subsection*{Optimizaciones}
+
+\subsubsection*{General}
+    \begin{enumerate}
+       \item Agregar un votante a una preferencia existente dentro de un perfil
+       es $O(log(n))$, donde $n$ es el número de preferencias. Esto se logra
+       manteniendo las preferencias ordenadas dentro de cada perfil.
+    \end{enumerate}
+
+\subsection*{BFS}
+    \begin{enumerate}
+       \item Los perfiles visitados se mantienen en un vector ordenado,
+       lo que garantiza, al utilizar búsqueda binaria, que a lo sumo
+       se realizará un número logarítmico (en el número de estados) de
+       comparaciones para determinar si un estado ha sido visitado.
+       \item En principio, los perfiles se deben generar
+    
         - Optimizaciones:
             BFS:
                 - Mantener dos perfiles: padre y un hijo, para no recomputar el padre en toda una frontera
@@ -99,10 +99,6 @@ Búsqueda}
 /bin/bash: xclip: command not found
 
 \begin{itemize}
-\item Explicación de obtener sucesor (ambos casos)
-
-\item Detalles de agregar preferencia (en el sentido
-de hacer una agregacion logaritmica en ciertos casos)
 \item Nodos generados almacenados en un vector ordenados
 (búsqueda logarítmica)
 
@@ -119,7 +115,7 @@ proporciones.
 \end{itemize}
 
 \section{Discusión de resultados}
-
+Mejor no memorizar
 \section{Recomendaciones}
 
 \end{document}

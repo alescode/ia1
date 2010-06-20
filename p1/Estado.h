@@ -1,5 +1,5 @@
 #ifndef _ESTADO
-#define _ESTADO
+	#define _ESTADO
 
 #include <cstring>
 #include <stack>
@@ -70,12 +70,7 @@ class Estado {
         void expandir(queue<Estado*>* q, Perfil *p, int candidatos,
                 vector<Estado*>*visitados, Perfil *inicial);
 
-        inline void print(ostream& os) {
-            os << prog			<< " "
-                << int(fila)		<< " "
-                << columna		<< " "
-                << profundidad	<< endl;
-        }
+        void print(ostream& os);
 };
 
 #endif
