@@ -1,0 +1,19 @@
+Ale@caraota p1 > time !!
+time ./dodgson -bfs ejemplos/ejemplo5-15.in -all
+Dodgson winner: @ a @
+Num cambios elementales: 4
+Nodos generados: 9807
+Nodos expandidos: 1445
+
+real    0m2.877s
+user    0m2.871s
+sys     0m0.004s
+Ale@caraota p1 > time ./dodgson -bfs ejemplos/ejemplo5-15.in
+Dodgson winner: @
+Num cambios elementales: 4
+Nodos generados: 9807
+Nodos expandidos: 1445
+
+real    0m2.788s
+user    0m2.781s
+sys     0m0.004s
