@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  18 JUN 2010 19:04
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 00:10
 entering extended mode
 **ia1proy1.tex
 (./ia1proy1.tex
@@ -429,22 +429,22 @@ File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 ) [1
 
 {/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map} <./usb.jpg>] 
-[1]
+[1] [2]
 (./ia1proy1.aux) ) 
 Here is how much of TeX's memory you used:
- 2626 strings out of 94073
- 30897 string characters out of 1163499
+ 2633 strings out of 94073
+ 30988 string characters out of 1163499
  2085237 words of memory out of 4536433
- 5893 multiletter control sequences out of 10000+50000
- 7442 words of font info for 29 fonts, out of 2000000 for 2000
+ 5900 multiletter control sequences out of 10000+50000
+ 8056 words of font info for 31 fonts, out of 2000000 for 2000
  645 hyphenation exceptions out of 5000
  27i,7n,25p,224b,215s stack positions out of 5000i,500n,6000p,200000b,50000s
 </usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmbx12
 .pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/loc
 al/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr17.pfb>
-Output written on ia1proy1.pdf (2 pages, 55770 bytes).
+Output written on ia1proy1.pdf (3 pages, 60588 bytes).
 PDF statistics:
- 22 PDF objects out of 1000 (max. 8388607)
+ 25 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
