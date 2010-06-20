@@ -5,7 +5,7 @@ using namespace std;
 extern int num_candidatos;
 extern int num_votantes;
 extern string final;
-extern string candidatos[250];
+extern string candidatos[MAX_CANDIDATOS];
 
 extern int num_generados;
 extern int num_expandidos;
@@ -70,7 +70,7 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 		candidato ganador = perfil_actual->calcular_ganador_dodgson();
 		if (ganador != NO_GANADOR){
 			/* Hemos llegado a un goal */
-			metas.push_back(pair<candidato, Estado>(ganador, *padre_anterior));
+			metas.push_back(pair<candidato, Estado>(ganador, *n));
             if (!all)
                 break;
 		} else if (metas.empty()) {

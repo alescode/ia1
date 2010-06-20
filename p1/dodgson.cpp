@@ -17,13 +17,25 @@ int num_generados = 0;
 int num_expandidos = 0;
 int num_cambios = 0;
 
+void guardar_estado(candidato c, string final, Estado e) {
+#if 0 
+    if (e->tiene_padre()) {
+        while (s) {
+            e = e->padre();
+        }
+        perfil_actual->aplicar_cambio_elemental(n->obtener_fila(),
+                                                n->obtener_columna());
+#endif
+}
+
 int main(int argc, char* argv[]){
 	char algoritmo = NO_ALGORITMO;
 	bool all = false;
+	bool impresion = false;
 	bool ok = true;
-	string filename;
+	string entrada;
 
-	filename = "";
+	entrada = "";
 
 	/* Verificamos que los parametros se pasen correctamente
 	 */
@@ -47,22 +59,21 @@ int main(int argc, char* argv[]){
 			}
 
 		} else if (!strcmp(argv[i],"-final")){
-
 			/* Asignacion de archivo de salida */
 			if (++i < argc && final.size() == 0){
+                impresion = true;
 				final = argv[i];
 			} else {
 				ok = false; // Doble asignacion o falta de nombre
 			}
-
-		} else if (filename.size() == 0){
+		} else if (entrada.size() == 0){
 
 			/* Asignacion de archivo de entrada */
-			filename = argv[i];
+			entrada = argv[i];
 
 			/* Verificacion de existencia */
 			struct stat f__stat;
-			if(stat(filename.c_str(),&f__stat)){
+			if(stat(entrada.c_str(),&f__stat)){
 				ok = false;
 			}
 		} else {
@@ -72,7 +83,7 @@ int main(int argc, char* argv[]){
 		}
 	}
 
-	ok = ok && filename.size() && algoritmo;
+	ok = ok && entrada.size() && algoritmo;
 
 	if (!ok) {
 		cout << endl
@@ -86,7 +97,7 @@ int main(int argc, char* argv[]){
 	/* Leemos el perfil asociado al archivo de entrada */
 
 	ifstream file;
-	file.open(filename.c_str());
+	file.open(entrada.c_str());
 	
 	string siguiente;
 	int num_preferencias;
@@ -148,6 +159,13 @@ int main(int argc, char* argv[]){
 	//resultados.sort();
 	while (!resultados.empty()) {
 		candidato s = resultados.front().first;
+
+        if (impresion) {
+            cout << "FINAL!" << endl;
+            Estado n = resultados.front().second;
+            guardar_estado(s, final, n);
+        }
+
 		cout << " " << candidatos[s];
 		do {
             resultados.pop_front();

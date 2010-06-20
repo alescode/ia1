@@ -131,11 +131,3 @@ void Estado::expandir(queue<Estado*>* q, Perfil *p, int candidatos,
         }
     }
 }
-
-inline
-void Estado::print(ostream& os) {
-    os << prog			<< " "
-        << int(fila)		<< " "
-        << columna		<< " "
-        << profundidad	<< endl;
-}
