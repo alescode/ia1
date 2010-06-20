@@ -2,6 +2,7 @@
 	#define _IDAestrella
 
 #include <iostream>
+#include <sstream>
 #include <queue>
 #include <list>
 #include "Estado.h"

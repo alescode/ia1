@@ -35,7 +35,7 @@ void Perfil::print(ostream& os) {
     os << "Perfil: " << endl;
     int size = (this->info)->size();
     for (int i = 0; i < size; i++)
-        (*(this->info))[i]->print(cout);
+        (*(this->info))[i]->print(os);
 }
 
 /*Convencion: si el elemento esta en el vector,
@@ -236,7 +236,10 @@ candidato Perfil::obtener(candidato j, int i){
 
 void Perfil::guardar(string filename){
 	ofstream output(filename.c_str());
-	for (int i=0;i<info->size();i++){
+    output << "profile" << endl;
+    output << info->size() << endl;
+	for (int i=0; i<info->size(); i++){
 		((*info)[i])->print2(output, candidatos);
 	}
+    output.close();
 }

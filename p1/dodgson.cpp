@@ -11,7 +11,7 @@ using namespace std;
 int num_candidatos;
 int num_votantes;
 string final;				/* Nombre de archivo para colocar la salida */
-string candidatos[250];
+string candidatos[MAX_CANDIDATOS];
 
 int num_generados = 0;
 int num_expandidos = 0;
@@ -25,8 +25,7 @@ int main(int argc, char* argv[]){
 
 	filename = "";
 
-	/* Verificamos que los parametros se pasen correctamente
-	 */
+	/* Verificamos que los parametros se pasen correctamente */
 	for (int i=1;i<argc && ok;i++) {
 		if(!strcmp(argv[i],"-ida") || !strcmp(argv[i],"-bfs"))
 		{
@@ -62,7 +61,7 @@ int main(int argc, char* argv[]){
 
 			/* Verificacion de existencia */
 			struct stat f__stat;
-			if(stat(filename.c_str(),&f__stat)){
+			if(stat(filename.c_str(), &f__stat)){
 				ok = false;
 			}
 		} else {

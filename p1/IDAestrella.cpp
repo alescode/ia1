@@ -8,6 +8,10 @@ extern int num_votantes;
 extern int num_generados;
 extern int num_expandidos;
 extern int num_cambios;
+extern string final;
+extern string candidatos[MAX_CANDIDATOS];
+
+int veces_ganadas[MAX_CANDIDATOS] = {0};
 
 bool todos;
 
@@ -24,6 +28,18 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
         num_cambios = g;
         metas->push_back(ganador);
 
+        if (final.size() != 0) {
+            /* Impresion del perfil ganador,
+             * se realiza en este nivel para no
+             * tener que recalcular el perfil */ 
+            stringstream nombre_archivo;
+            nombre_archivo << candidatos[ganador];
+            nombre_archivo << veces_ganadas[ganador];
+            veces_ganadas[ganador]++;
+            nombre_archivo << "-" << final;
+
+            p->guardar(nombre_archivo.str());
+        }
         return f;
     }
 
@@ -66,7 +82,6 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			if (s->compare(*p) == 0){
 				iguales = true;
 			} else {
-				//cout << "Hola mundo " << s->compare(*p) << endl;
 				list<Cambio*>::iterator it;
 
 				for ( it=visitados->begin() ; it != visitados->end() && !iguales; it++ ){
@@ -76,7 +91,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			}
 			delete s;
 			
-			if (!iguales){
+			if (!iguales) {
 				num_generados++;
 				
 				Cambio* nuevo_cambio = new Cambio();
@@ -113,13 +128,11 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
     int limite_f = perfil_inicial->h();
     list<Cambio*>* visitados = new list<Cambio*>;
 
-
 	Perfil *p = new Perfil(*perfil_inicial);
 	
     while (metas->empty()) {
         limite_f = IDFS(0, limite_f, p, metas, visitados, perfil_inicial);
     }
 
-    //cout << limite_f << endl;
     return *metas;
 }
