@@ -48,7 +48,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 	//inicial->print(cout);
 	
     int preferencias = p->obtener_num_preferencias();
-    int nuevo_limite;
+    int nuevo_limite = -1;
 
     /* Para cada preferencia, todos sus posibles cambios
      * elementales */
@@ -63,8 +63,12 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			if (no_memorizar){
 				num_generados++;
 				
-
-				nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+				if (nuevo_limite == -1){
+					nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+				} else {
+					int nuevo = IDFS(g + 1, limite, p, metas, visitados, inicial);
+					nuevo_limite = (nuevo<nuevo_limite)?nuevo:nuevo_limite;
+				}
 				
 				p->aplicar_cambio_elemental(j, busqueda);
 				p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
@@ -100,7 +104,12 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 				nuevo_cambio->columna = i;
 				visitados->push_back(nuevo_cambio);
 
-				nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+				if (nuevo_limite == -1){
+					nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+				} else {
+					int nuevo = IDFS(g + 1, limite, p, metas, visitados, inicial);
+					nuevo_limite = (nuevo<nuevo_limite)?nuevo:nuevo_limite;
+				}
 			
 				delete visitados->back();
 				visitados->pop_back();

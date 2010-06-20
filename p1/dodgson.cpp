@@ -160,8 +160,7 @@ int main(int argc, char* argv[]){
 			resultados = IDAestrella(p, all);
 			break;
 	}
-#if 0
-    cout << "Dodgson winner:";
+	cout << "Dodgson winner:";
 	
 	resultados.sort();
 	while (!resultados.empty()) {
@@ -177,7 +176,6 @@ int main(int argc, char* argv[]){
 			<< endl << "Nodos generados: " << num_generados
 			<< endl << "Nodos expandidos: " << num_expandidos
 			<< endl;
-#endif
-    cout << num_cambios << endl;    
+	
 	return 0;
 }
