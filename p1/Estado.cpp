@@ -1,5 +1,7 @@
 #include "Estado.h"
 
+extern bool mostrar_proporcion;
+
 Estado::Estado(Estado* a, int f, int c, int p){
     prog = a;
     fila = f;
@@ -86,6 +88,12 @@ int Estado::fue_visitado(Perfil& p, vector<Estado*> &visitados,
             delete p_visitado;
 
             if (comparacion == 0) {
+				
+				if(mostrar_proporcion){
+					cout << 1 - (contador_no_resueltos/contador_total) << " " <<
+					(contador_total - contador_no_resueltos) << "/" << contador_total << endl;
+				}
+				
                 return -(izq+1);
             } else if (comparacion < 0){
                 izq = med+1;
@@ -94,6 +102,12 @@ int Estado::fue_visitado(Perfil& p, vector<Estado*> &visitados,
             }
         }
     }
+    
+    if(mostrar_proporcion){
+		cout << 1 - (contador_no_resueltos/contador_total) << " " <<
+		(contador_total - contador_no_resueltos) << "/" << contador_total << endl;;
+	}
+
     return izq;
 }
 
@@ -109,10 +123,7 @@ void Estado::expandir(queue<Estado*>* q, Perfil *p, int candidatos,
 
             Estado* nuevo = new Estado(this, j, i, profundidad + 1);
             nuevo->clasificacion = 0;
-
-            //	q->push(nuevo);
-            //	continue;
-
+			
             Perfil* perfil_nuevo = new Perfil(*p);
 
             perfil_nuevo->aplicar_cambio_elemental(j,i);

@@ -95,6 +95,7 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 			/* No expandimos si hemos conseguido una meta, sus hijos
 			 * estaran siempre en un nivel mas que estos
 			 */
+			
 			n->expandir(q, perfil_actual, num_candidatos,
 						&visitados, perfil_inicial);
 			num_expandidos++;
@@ -105,10 +106,6 @@ list<candidato> BFS(Perfil *perfil_inicial, bool all){
 		}
 
 		delete perfil_actual;
-	}
-	
-	for (int i=0;i<visitados.size();i++){
-		delete visitados[i];
 	}
 
 	num_generados = visitados.size();

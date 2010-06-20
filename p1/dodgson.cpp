@@ -17,7 +17,12 @@ int num_generados = 0;
 int num_expandidos = 0;
 int num_cambios = 0;
 
+/* Opciones adicionales para los algoritmos */
+bool no_memorizar = false;
+bool mostrar_proporcion = false;
+
 int main(int argc, char* argv[]){
+	
 	char algoritmo = NO_ALGORITMO;
 	bool all = false;
 	bool ok = true;
@@ -54,7 +59,11 @@ int main(int argc, char* argv[]){
 				ok = false; // Doble asignacion o falta de nombre
 			}
 
-		} else if (filename.size() == 0){
+		} else if (!strcmp(argv[i],"-nomem")){
+			no_memorizar = true;
+		} else if (!strcmp(argv[i],"-prop")){
+			mostrar_proporcion = true;
+		}else if (filename.size() == 0){
 
 			/* Asignacion de archivo de entrada */
 			filename = argv[i];
@@ -64,21 +73,30 @@ int main(int argc, char* argv[]){
 			if(stat(filename.c_str(), &f__stat)){
 				ok = false;
 			}
-		} else {
-
+		} else{
 			/* Error de entrada */
 			ok = false;
 		}
 	}
 
-	ok = ok && filename.size() && algoritmo;
+	ok = ok && filename.size()
+			&& algoritmo
+			&& (!no_memorizar || (algoritmo==2))
+			&& (!mostrar_proporcion || (algoritmo==1));
 
 	if (!ok) {
 		cout << endl
 			 << "  Uso de dodgson: "
 			 << endl << endl
-			 << "	dodgson {-ida,-bfs} [-all] [-final <output>] input"
-			 << endl << endl;
+			 << "	dodgson {-ida,-bfs} [-all] [-nomem] [-final <output>] input"
+			 << endl << endl
+			 << "	-all: Obtener todos los candidatos" << endl
+			 << "	-final <output>: Para cada ganador a, guardar el perfil en a-<final>" << endl
+			 << "	-input: Archivo de donde se leera el perfil inicial" << endl
+			 << "	-nomem: Para no memorizar los estados repetidos, solo valido para ida" << endl
+			 << "	-prop: Mostrar en cada comparacion de visitados, la proporcion resuelta" << endl
+			 << "	       mediante funcion de clasificacion, solo valido para bfs" << endl
+			 << endl;
 		exit(0);
 	}
 
@@ -132,7 +150,7 @@ int main(int argc, char* argv[]){
 	}
 
 	file.close();
-	
+
 	list<candidato> resultados;
 	switch (algoritmo) {
 		case 1:

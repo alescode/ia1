@@ -10,6 +10,7 @@ extern int num_expandidos;
 extern int num_cambios;
 extern string final;
 extern string candidatos[MAX_CANDIDATOS];
+extern int no_memorizar;
 
 int veces_ganadas[MAX_CANDIDATOS] = {0};
 
@@ -59,21 +60,21 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
-			/*
-			num_generados++;
-			
+			if (no_memorizar){
+				num_generados++;
+				
 
-			nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
-			
-			p->aplicar_cambio_elemental(j, busqueda);
-			p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
+				nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+				
+				p->aplicar_cambio_elemental(j, busqueda);
+				p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
 
-			if (!todos && !metas->empty()) {
-				return nuevo_limite;
+				if (!todos && !metas->empty()) {
+					return nuevo_limite;
+				}
+				
+				continue;
 			}
-			
-			continue;
-			*/
 			
 			/* Comparar con los nodos visitados ancestros */
 			Perfil* s = new Perfil(*inicial);
@@ -126,7 +127,7 @@ list<candidato> IDAestrella(Perfil *perfil_inicial, bool all){
 
     int limite_f = perfil_inicial->h();
     list<Cambio*>* visitados = new list<Cambio*>;
-
+	
 	Perfil *p = new Perfil(*perfil_inicial);
 	
     while (metas->empty()) {
