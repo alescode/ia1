@@ -88,8 +88,7 @@ int Estado::fue_visitado(Perfil& p, vector<Estado*> &visitados,
             delete p_visitado;
 
             if (comparacion == 0) {
-				
-				if(mostrar_proporcion){
+				if(mostrar_proporcion && contador_total != 0){
 					cout << 1 - (contador_no_resueltos/contador_total) << " " <<
 					(contador_total - contador_no_resueltos) << "/" << contador_total << endl;
 				}
@@ -103,9 +102,9 @@ int Estado::fue_visitado(Perfil& p, vector<Estado*> &visitados,
         }
     }
     
-    if(mostrar_proporcion){
+    if (mostrar_proporcion && contador_total != 0) {
 		cout << 1 - (contador_no_resueltos/contador_total) << " " <<
-		(contador_total - contador_no_resueltos) << "/" << contador_total << endl;;
+		(contador_total - contador_no_resueltos) << "/" << contador_total << endl;
 	}
 
     return izq;
