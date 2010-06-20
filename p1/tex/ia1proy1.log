@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 18:32
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 18:47
 entering extended mode
 **ia1proy1.tex
 (./ia1proy1.tex
@@ -425,7 +425,7 @@ File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 
 {/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map} <./usb.jpg>] 
 [1] [2] [3]
-[4] [5] (./ia1proy1.aux) ) 
+[4] (./ia1proy1.aux) ) 
 Here is how much of TeX's memory you used:
  2626 strings out of 94073
  30730 string characters out of 1163499
@@ -434,18 +434,18 @@ Here is how much of TeX's memory you used:
  12928 words of font info for 50 fonts, out of 2000000 for 2000
  645 hyphenation exceptions out of 5000
  27i,7n,25p,224b,215s stack positions out of 5000i,500n,6000p,200000b,50000s
-</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/c
-m/cmbx12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi12.pfb>
-</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/local/gw
-TeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/gwTeX/texmf.texl
-ive/fonts/type1/bluesky/cm/cmr17.pfb></usr/local/gwTeX/texmf.texlive/fonts/type
-1/bluesky/cm/cmr8.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cm
-sy10.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr
-/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmti12.pfb></usr/local/gwTeX/
-texmf.texlive/fonts/type1/bluesky/cm/cmtt12.pfb>
-Output written on ia1proy1.pdf (6 pages, 95715 bytes).
+</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cm
+bx12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi12.pfb></us
+r/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/local/gwTeX/
+texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/gwTeX/texmf.texlive/
+fonts/type1/bluesky/cm/cmr17.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bl
+uesky/cm/cmr8.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmsy10
+.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/loc
+al/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmti12.pfb></usr/local/gwTeX/texm
+f.texlive/fonts/type1/bluesky/cm/cmtt12.pfb>
+Output written on ia1proy1.pdf (5 pages, 95250 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
