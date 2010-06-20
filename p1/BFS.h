@@ -8,8 +8,8 @@
 #include <sstream>
 #include <cstring>
 
-typedef list<pair<candidato, Estado> > listasoluciones;
+typedef list<candidato> listasoluciones;
 
-listasoluciones BFS(Perfil *perfil_inicial, bool all);
+list<candidato> BFS(Perfil *perfil_inicial, bool all);
 
 #endif

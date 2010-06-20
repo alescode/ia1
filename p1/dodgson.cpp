@@ -136,7 +136,7 @@ int main(int argc, char* argv[]){
 	list<candidato> resultados;
 	switch (algoritmo) {
 		case 1:
-			//resultados = BFS(p, all);
+			resultados = BFS(p, all);
 			break;
 		case 2:
 			resultados = IDAestrella(p, all);

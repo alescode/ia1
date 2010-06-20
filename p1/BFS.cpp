@@ -5,15 +5,17 @@ using namespace std;
 extern int num_candidatos;
 extern int num_votantes;
 extern string final;
-extern string candidatos[250];
+extern string candidatos[MAX_CANDIDATOS];
 
 extern int num_generados;
 extern int num_expandidos;
 extern int num_cambios;
 
-listasoluciones BFS(Perfil *perfil_inicial, bool all){
+int v_ganadas[MAX_CANDIDATOS] = {0};
+
+list<candidato> BFS(Perfil *perfil_inicial, bool all){
 	queue<Estado*> *q = new queue<Estado*>();
-	listasoluciones metas;
+	list<candidato> metas;
 	vector<Estado*> visitados;
 	
 	Perfil *perfil_padre = NULL;
@@ -33,10 +35,6 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 		     || num_cambios == q->front()->obtener_profundidad())) {
 		n = q->front();
 		q->pop();
-
-        if (num_cambios != n->obtener_profundidad()){
-			cout << n->obtener_profundidad() << endl;
-		}
 		
 		num_cambios = n->obtener_profundidad();
 		
@@ -74,7 +72,21 @@ listasoluciones BFS(Perfil *perfil_inicial, bool all){
 
 			/* Hemos llegado a un goal */
 			//n->print(cout);
-			metas.push_back(pair<candidato, Estado>(ganador, *n));
+			metas.push_back(ganador);
+			
+			if (final.size() != 0) {
+				/* Impresion del perfil ganador,
+				* se realiza en este nivel para no
+				* tener que recalcular el perfil */ 
+				stringstream nombre_archivo;
+				nombre_archivo << candidatos[ganador];
+				nombre_archivo << v_ganadas[ganador];
+				v_ganadas[ganador]++;
+				nombre_archivo << "-" << final;
+
+				perfil_actual->guardar(nombre_archivo.str());
+			}
+			
             if (!all)
                 break;
 
