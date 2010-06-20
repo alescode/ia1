@@ -133,25 +133,25 @@ int main(int argc, char* argv[]){
 
 	file.close();
 	
-	listasoluciones resultados;
+	list<candidato> resultados;
 	switch (algoritmo) {
 		case 1:
-			resultados = BFS(p, all);
+			//resultados = BFS(p, all);
 			break;
 		case 2:
-			IDAestrella(p, all);
+			resultados = IDAestrella(p, all);
 			break;
 	}
 	cout << "Dodgson winner:";
 	
-	//resultados.sort();
+	resultados.sort();
 	while (!resultados.empty()) {
-		candidato s = resultados.front().first;
+		candidato s = resultados.front();
 		cout << " " << candidatos[s];
 		do {
             resultados.pop_front();
         }
-		while (s == resultados.front().first);
+		while (s == resultados.front()); 
 	}
 	
 	cout << endl << "Num cambios elementales: " << num_cambios

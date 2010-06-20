@@ -113,7 +113,6 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			}
 		}
 	}
-	
 	return nuevo_limite;
 }
 
