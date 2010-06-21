@@ -48,34 +48,37 @@ en un perfil. En cada perfil, las preferencias se encuentran
 almacenadas en un vector de forma ordenada.
 
 Todo esto garantiza que cada perfil esté unívocamente representado
-independientemente de con que cambios elementales hemos llegado
+independientemente de cuáles cambios elementales han sido aplicados
+para llegar
 hasta él, evitando así la repetición de estados.
 
-\bigskip
 Se establece adicionalmente una relación de orden sobre perfiles,
 $\sqsubseteq$, determinada por el orden lexicográfico de sus
-preferencias, más adelante se explicará el uso de esta relación
-de orden.
+preferencias.
 
 \subsection{Representación de Estados}
 
-Dadas las consideraciones impuestas sobre elespacio de búsqueda,
-tenemos que podemos considerar un \textit{branching factor} de a
+Se tiene que en el espacio de búsqueda de este problema
+el factor de ramificación (\emph{branching factor}) es de
 lo sumo $m\cdot(n-1)$, donde $m$ es el número de electores y $n$
-el número de candidatos. Aunado a esto tenemos un número máximo
-de candidatos de $250$, considerando que tenemos $10^6$ de electores
-obtendremos un \textit{branching factor} máximo de $249\times 10^6$.
-Si consideramos a un estado del espacio de búsqueda como el perfil
-completo, al ejecutar una cambio elemental en el algoritmo de
+el número de candidatos.
+
+Con el número máximo de candidatos establecido en
+$250$ y suponiendo un (realista) número de $10^6$ de electores,
+el factor de ramificación máximo será $249\times 10^6$.
+
+Si la representación de cada estado tuviese la información
+completa del perfil en ella, al ejecutar tan sólo un 
+cambio elemental en el algoritmo de
 búsqueda en amplitud habremos de mantener en memoria $55$
 \textit{petabytes}.
 
-Todo apunta a mantener el mínimo número posible de perfiles en
-memoria y optar por una representación compacta para los estados.
+Es por esto que se consideró 
+optar por una representación compacta para los estados.
 
 \subsubsection*{BFS}
 
-En el caso de BFS, dada la forma de su recorrido, el número de
+En el caso de BFS el número de
 nodos crecerá exponencialmente, por lo que una representación
 compacta permitirá ahorrar recursos para que el algoritmo pueda
 concluir su ejecución, en ciertos casos, sin agotar la memoria
@@ -89,7 +92,7 @@ Es necesario mantener una lista de estados ``cerrados" (ya
 generados por el algoritmo) para una correcta implementación
 de búsqueda en amplitud. En este caso, los estados visitados
 se mantuvieron en un vector ordenado mediante la siguiente
-relación de orden sobre Estados:
+relación de orden sobre Estado:
 
 Sean $a, b$ estados generados por el algoritmo de búsqueda en
 profundidad:
@@ -105,13 +108,13 @@ IDA*. Dando un orden $a_0, a_1, \ldots, a_n$ sobre los candidato,
 tenemos que la función de clasificación de un estado $s$ viene
 dada por:
 
-$$\displaystyle f(s) = \sum_{i\in [0..n]} (b^i\cdot T'(a_i))$$
+$$\displaystyle f(s) = \sum_{i\in [0..n]} (B^i\cdot T'(a_i))\mbox{,}$$
+    
+\noindent donde $B$ es una constante que dispersa los
+resultados de cada $T'(a_i)$ para evitar colisiones.
+En esta implementación se escogió $B=10$, pues
+este valor aportó resultados experimentales bastante satisfactorios.
 
-\hspace*{-0.5cm}donde $b$ es una constante que dispersa los
-resultados de cada $T'(a_i)$ para evitar colisiones y que en
-nuestro caso obtuvimos mejor resultados con $b=10$.
-
-\bigskip
 La intuición detrás de esta decisión es la siguiente:
 dos estados que evalúan a un diferente valor de la función de clasificación
 deben ser distintos, y por lo tanto no hay que obtener los perfiles asociados
@@ -125,20 +128,18 @@ solución en éste.
 
 \subsubsection*{IDA*}
 
-Para este algoritmo se utilizó un solo perfil. Cuando vamos a expandir
-un nodo, consideramos uno de sus sucesores, aplicamos un cambio elemental
-y llamamos recursivamente a su sucesor. Una vez que el sucesor devuelve
-una respuesta, se desaplica el cambio elemental, se expande sistemáticamente
-hacia el próximo hijo y así sucesivamente hasta agotar los posibles cambios
+Para este algoritmo se utilizó un solo perfil. Cuando se va a expandir
+un nodo, se considera uno de sus sucesores, se aplica un cambio elemental
+y se llama recursivamente a su sucesor. Una vez que el sucesor devuelve
+una respuesta, se desaplica el cambio elemental y se expande
+al próximo hijo. Este proceso se repite hasta agotar los  cambios
 elementales. 
 
 De esta forma se reduce la memoria utilizada de $b\cdot d$ a $d$, donde
-$b$ es el \textit{branching factor} y $d$ la longitud de camino. Cada
-vez que expandimos un nodo no generamos inmediatamente todos sus
-sucesores, generamos uno a uno y vamos explorando por cada uno de 
+$b$ es el \textit{branching factor} y $d$ la longitud de camino. 
 
 La lista de estados visitados se representa con un protocolo $LIFO$ que
-permita simular las llamadas recursivas. En esta lista se presentan los
+permite simular las llamadas recursivas. En esta lista se presentan los
 continuos cambios que se han venido aplicando para, de esta forma, poder
 construir desde el estado inicial cada uno de los nodos intermedios.
 
@@ -171,19 +172,18 @@ construir desde el estado inicial cada uno de los nodos intermedios.
        generados) de comparaciones para determinar si se debe generar un
        nuevo estado.
 
-		\item Se mantienen en memoria dos perfiles. Uno con el perfil
-		actual y otro con el padre de la iteración anterior. Dado el
-		recorrido que realiza la búsqueda en profundidad, $b-1$ nodos
-		de la frontera utilizarán el padre que generó su hermano, evitando
-		así el cálculo adicional de generar cada perfil desde el inicial.
+		\item Se mantienen en memoria dos perfiles. Uno de ellos es el perfil
+		correspondiente al estado recién expandido,
+        y el otro corresponde al perfil padre de la iteración anterior. En
+        búsqueda en profundidad, $b$ nodos
+		de la frontera utilizarán el mismo padre, y con esto se evita
+		el cálculo adicional de generar cada perfil desde el inicial.
 		
 		\item Se guarda el nivel de profundidad para no expandir nodos más
 		allá de una meta.
 		
 		\item Gracias a la función de clasificación se evita generar
-		cada perfil del vector de estados generados. Más adelante se
-		muestran ciertos resultados acerca de la proporción de mejora
-		de esta función.
+		cada perfil del vector de estados generados. 
 
 		\item Los nodos generados se almacenan en un vector ordenados
 		bajo la relación de orden dada para los estados, permitiendo
@@ -197,6 +197,7 @@ construir desde el estado inicial cada uno de los nodos intermedios.
 los tiempos de ejecución del algoritmo de IDA* mejoran considerablemente,
 por lo tanto se consideró una opción adicional que permite correr el
 algoritmo sin verificar repeticiones.
+
 \end{enumerate}
 
 \section{Opciones añadidas}
