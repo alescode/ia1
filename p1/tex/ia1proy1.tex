@@ -3,6 +3,7 @@
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 
+\usepackage{pdflscape}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{slashbox}
@@ -13,6 +14,16 @@
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}
 
 \newcommand{\ms}{\texttt}
+
+\newcommand{\gra}[2]{
+	\includegraphics[height=#2cm]{#1}
+}
+
+\newcommand{\grac}[2]{
+	\begin{center}
+	\includegraphics[height=#2cm]{#1}
+	\end{center}
+}
 
 \begin{document}
 
@@ -29,8 +40,8 @@ Búsqueda}
 
 \subsection{Representación de Perfiles}
 
-Para la representación explícita de un perfil optamos por
-implementarlos compactando las preferencias que representen
+Para la representación de un perfil, se optó por
+compactar las preferencias que representen
 la misma permutación de candidatos, de esta forma cada permutación
 $a_0, a_1, \ldots, a_n$ de estos aparecerá a lo sumo una vez
 en un perfil. En cada perfil, las preferencias se encuentran
@@ -94,7 +105,7 @@ IDA*. Dando un orden $a_0, a_1, \ldots, a_n$ sobre los candidato,
 tenemos que la función de clasificación de un estado $s$ viene
 dada por:
 
-$$f(s) = \Sigma_{i\in [0..n]} (b^i\cdot T'(a_i))$$
+$$\displaystyle f(s) = \sum_{i\in [0..n]} (b^i\cdot T'(a_i))$$
 
 \hspace*{-0.5cm}donde $b$ es una constante que dispersa los
 resultados de cada $T'(a_i)$ para evitar colisiones y que en
@@ -200,7 +211,11 @@ clasificación.
 \end{itemize}
 
 \section{Discusión de resultados}
-Mejor no memorizar
-\section{Recomendaciones}
-Permutation ranking
+En los siguientes ejemplos se evalúa el rendimiento
+de la función de clasificación utilizada para
+búsqueda en profundidad. Cada gráfico muestra la proporción
+de nodos que no tuvieron que ser comparados
+en corridas completas del algoritmo (nodos evitados entre nodos totales).
+\pagebreak
+
 \end{document}

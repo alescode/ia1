@@ -1,0 +1,75 @@
+\documentclass[landscape, twocolumn, letterpaper,10pt, notitlepage]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{slashbox}
+\usepackage[intlimits]{amsmath}
+\usepackage{amssymb}
+\usepackage[left=2cm, right=2cm, top=4cm, bottom=3.5cm]{geometry}
+
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}
+
+\newcommand{\ms}{\texttt}
+
+\newcommand{\gra}[2]{
+	\includegraphics[height=#2cm]{#1}
+}
+
+\newcommand{\grac}[2]{
+	\begin{center}
+	\includegraphics[height=#2cm]{#1}
+	\end{center}
+}
+
+\begin{document}
+\subsection{Ejemplo 1: 1 cambio elemental}
+
+\begin{tabular}{||c|c|c|c||}
+\hline
+Media & Mediana & Desviación estándar & Rango intercuartil\\ \hline
+0.7202& 0.7083& 0.2586& 0.4583\\\hline
+\end{tabular}
+
+\gra{E1.pdf}{10}
+
+\subsection{Ejemplo 2: 3 cambios elementales}
+
+\begin{center}
+\begin{tabular}{||c|c|c|c||}
+\hline
+Media & Mediana & Desviación estándar & Rango intercuartil\\ \hline
+0.5041& 0.5000& 0.1435& 0.1987\\\hline
+\end{tabular}
+\end{center}
+
+\grac{E3.pdf}{12}
+
+\subsection{Ejemplo 3: 4 cambios elementales}
+
+\begin{center}
+\begin{tabular}{||c|c|c|c||}
+\hline
+Media & Mediana & Desviación estándar & Rango intercuartil\\ \hline
+0.5772& 0.5455& 0.1464& 0.2051\\\hline
+\end{tabular}
+\end{center}
+
+\grac{E4.pdf}{12}
+
+\subsection{Ejemplo 4: 6 cambios elementales}
+
+\begin{center}
+\begin{tabular}{||c|c|c|c||}
+\hline
+Media & Mediana & Desviación estándar & Rango intercuartil\\ \hline
+0.4671& 0.4444& 0.1211& 0.1610\\\hline
+\end{tabular}
+\end{center}
+
+\grac{E6.pdf}{12}
+
+\end{document}

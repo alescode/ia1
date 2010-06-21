@@ -1,0 +1,58 @@
+\documentclass[letterpaper,12pt, titlepage]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{slashbox}
+\usepackage[intlimits]{amsmath}
+\usepackage{amssymb}
+%\usepackage[left=2cm, right=2cm, top=4cm, bottom=3.5cm]{geometry}
+
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}
+
+\newcommand{\ms}{\texttt}
+
+\newcommand{\gra}[2]{
+	\includegraphics[height=#2cm]{#1}
+}
+
+\newcommand{\grac}[2]{
+	\begin{center}
+	\includegraphics[height=#2cm]{#1}
+	\end{center}
+}
+
+\begin{document}
+\setcounter{section}{5}
+\setcounter{page}{7}
+
+En base a estos resultados, puede afirmarse que aproximadamente la mitad
+de las veces la función de clasificación evita que se realicen comparaciones
+(costosas) entre perfiles para revisar si uno ha sido visitado.
+
+\section{Recomendaciones}
+Un enfoque diferente que podría haberse tomado al enfrentarse el problema
+de modelar los estados es el de representar las preferencias con
+enteros que codifiquen cada una de las posibles permutaciones de candidatos.
+Para esto sería necesaria una librería o lenguaje de programación
+que maneje números enteros arbitrariamente grandes.
+
+En este sentido, sería interesante explorar qué
+tanto pueden mejorarse los resultados utilizando un algoritmo eficiente capaz de codificar permutaciones
+en números y viceversa.
+
+Un algoritmo con estas características está descrito en \cite{1}.
+
+\begin{thebibliography}{9}
+
+\bibitem{1}
+    Bonet, B.
+    \emph{Efficient Algorithms to Rank and Unrank Permutations in Lexicographic Order}.
+    AAAI-Workshop on Search in AI and Robotics.
+    2008, Universidad Simón Bolívar, Venezuela.
+\end{thebibliography}
+
+\end{document}

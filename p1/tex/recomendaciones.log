@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 20:39
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 20:59
 entering extended mode
-**ia1proy1.tex
-(./ia1proy1.tex
+**recomendaciones.tex
+(./recomendaciones.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
@@ -391,8 +391,8 @@ Package: amsfonts 2001/10/25 v2.2f
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
 ))
-(./ia1proy1.aux)
-\openout1 = `ia1proy1.aux'.
+(./recomendaciones.aux)
+\openout1 = `recomendaciones.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
@@ -406,7 +406,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
- (/usr/local/gwTeX/texmf.texlive/tex/context/base/supp-pdf.tex
+
+(/usr/local/gwTeX/texmf.texlive/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen124
@@ -417,44 +418,24 @@ LaTeX Font Info:    ... okay on input line 28.
 \MPscratchDim=\dimen125
 \MPnumerator=\count109
 \everyMPtoPDFconversion=\toks25
-) <usb.jpg, id=1, 303.38344pt x 206.27063pt>
-File: usb.jpg Graphic file (type jpg)
- <use usb.jpg>
-LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+) [7
 
-(/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 37.
-
-(/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2002/01/19 v2.2g AMS font definitions
-) [1
-
-{/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map} <./usb.jpg>] 
-[1] [2] [3]
-[4] (./ia1proy1.aux) ) 
+{/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map}]
+(./recomendaciones.aux) ) 
 Here is how much of TeX's memory you used:
- 2656 strings out of 94073
- 31323 string characters out of 1163499
- 2085492 words of memory out of 4536688
- 5907 multiletter control sequences out of 10000+50000
- 12928 words of font info for 50 fonts, out of 2000000 for 2000
+ 2578 strings out of 94073
+ 30257 string characters out of 1163499
+ 2085496 words of memory out of 4536692
+ 5855 multiletter control sequences out of 10000+50000
+ 4891 words of font info for 18 fonts, out of 2000000 for 2000
  645 hyphenation exceptions out of 5000
- 32i,7n,25p,233b,215s stack positions out of 5000i,500n,6000p,200000b,50000s
-</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cm
-bx12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmex10.pfb></us
-r/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/local/gwTeX
-/texmf.texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/local/gwTeX/texmf.texlive
-/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/b
-luesky/cm/cmr17.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr8
-.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/lo
-cal/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/local/gwTeX/texm
-f.texlive/fonts/type1/bluesky/cm/cmti12.pfb></usr/local/gwTeX/texmf.texlive/fon
-ts/type1/bluesky/cm/cmtt12.pfb>
-Output written on ia1proy1.pdf (5 pages, 97086 bytes).
+ 32i,4n,25p,240b,189s stack positions out of 5000i,500n,6000p,200000b,50000s
+</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm
+/cmbx12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></
+usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmti12.pfb>
+Output written on recomendaciones.pdf (1 page, 25498 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 18 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
