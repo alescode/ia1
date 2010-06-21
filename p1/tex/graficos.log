@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 21:35
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 22:18
 entering extended mode
 **graficos.tex
 (./graficos.tex
@@ -469,11 +469,11 @@ driver: pdftex
 \@twocolumntrue 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
  (/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
@@ -481,30 +481,30 @@ File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 <E1.pdf, id=1, 505.89pt x 505.89pt>
 File: E1.pdf Graphic file (type pdf)
  <use E1.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 <E3.pdf, id=2, 505.89pt x 505.89pt>
 File: E3.pdf Graphic file (type pdf)
  <use E3.pdf>
-Overfull \hbox (5.85837pt too wide) in paragraph at lines 51--51
+Overfull \hbox (5.85837pt too wide) in paragraph at lines 53--53
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5
+[5
 
 {/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map} <./E1.pdf> <.
 /E3.pdf>] <E4.pdf, id=19, 505.89pt x 505.89pt>
 File: E4.pdf Graphic file (type pdf)
  <use E4.pdf>
-Overfull \hbox (5.85837pt too wide) in paragraph at lines 63--63
+Overfull \hbox (5.85837pt too wide) in paragraph at lines 65--65
  [] 
  []
 
 <E6.pdf, id=20, 505.89pt x 505.89pt>
 File: E6.pdf Graphic file (type pdf)
  <use E6.pdf>
-Overfull \hbox (5.85837pt too wide) in paragraph at lines 75--75
+Overfull \hbox (5.85837pt too wide) in paragraph at lines 77--77
  [] 
  []
 
@@ -520,7 +520,7 @@ Here is how much of TeX's memory you used:
 </usr/local/gwTeX/texmf.texlive/fon
 ts/type1/bluesky/cm/cmbx12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/blue
 sky/cm/cmr10.pfb>
-Output written on graficos.pdf (2 pages, 29550 bytes).
+Output written on graficos.pdf (2 pages, 29627 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
