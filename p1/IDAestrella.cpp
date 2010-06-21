@@ -57,50 +57,22 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 	for (int i=0; i < preferencias; i++){
 		for (unsigned char j = 0; j + 1 < num_candidatos; j++){
 
+			if (!visitados->empty()
+				 &&
+				 (visitados->back())->fila == j
+				 &&
+				 (visitados->back())->columna == i){
+				continue;
+			}
+			
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
 			if (no_memorizar) {
 				num_generados++;
 				
-				if (nuevo_limite == -1){
-					nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
-				} else {
-					int nuevo = IDFS(g + 1, limite, p, metas, visitados, inicial);
-					nuevo_limite = (nuevo<nuevo_limite)?nuevo:nuevo_limite;
-				}
-				
-				p->aplicar_cambio_elemental(j, busqueda);
-				p->swap_N(p->obtener(j+1,i), p->obtener(j,i));
-
-				if (!todos && !metas->empty()) {
-					return nuevo_limite;
-				}
-				
-				continue;
-			}
-			
-			/* Comparar con los nodos visitados ancestros */
-			Perfil* s = new Perfil(*inicial);
-			
-			bool iguales = false;
-			if (s->compare(*p) == 0){
-				iguales = true;
-			} else {
-				list<Cambio*>::iterator it;
-
-				for ( it=visitados->begin() ; it != visitados->end() && !iguales; it++ ){
-					s->aplicar_cambio_elemental((*it)->fila, (*it)->columna);
-					iguales = (s->compare(*p)==0);
-				}
-			}
-			delete s;
-			
-			if (!iguales) {
-				num_generados++;
-				
 				Cambio* nuevo_cambio = new Cambio();
-				nuevo_cambio->fila = j;
+				nuevo_cambio->fila = busqueda;
 				nuevo_cambio->columna = i;
 				visitados->push_back(nuevo_cambio);
 
@@ -113,6 +85,43 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			
 				delete visitados->back();
 				visitados->pop_back();
+				
+			} else {
+				
+				/* Comparar con los nodos visitados ancestros */
+				Perfil* s = new Perfil(*inicial);
+				
+				bool iguales = false;
+				if (s->compare(*p) == 0){
+					iguales = true;
+				} else {
+					list<Cambio*>::iterator it;
+
+					for ( it=visitados->begin() ; it != visitados->end() && !iguales; it++ ){
+						s->aplicar_cambio_elemental((*it)->fila, (*it)->columna);
+						iguales = (s->compare(*p)==0);
+					}
+				}
+				delete s;
+				
+				if (!iguales) {
+					num_generados++;
+					
+					Cambio* nuevo_cambio = new Cambio();
+					nuevo_cambio->fila = j;
+					nuevo_cambio->columna = i;
+					visitados->push_back(nuevo_cambio);
+
+					if (nuevo_limite == -1){
+						nuevo_limite = IDFS(g + 1, limite, p, metas, visitados, inicial);
+					} else {
+						int nuevo = IDFS(g + 1, limite, p, metas, visitados, inicial);
+						nuevo_limite = (nuevo<nuevo_limite)?nuevo:nuevo_limite;
+					}
+				
+					delete visitados->back();
+					visitados->pop_back();
+				}
 			}
 			
 			p->aplicar_cambio_elemental(j, busqueda);
