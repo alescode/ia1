@@ -60,7 +60,7 @@ int IDFS(int g, int limite, Perfil* p, list<candidato>* metas, list<Cambio*>* vi
 			p->swap_N(p->obtener(j,i), p->obtener(j+1,i));
 			int busqueda = p->aplicar_cambio_elemental(j, i);
 			
-			if (no_memorizar){
+			if (no_memorizar) {
 				num_generados++;
 				
 				if (nuevo_limite == -1){
