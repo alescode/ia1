@@ -96,10 +96,8 @@ relación de orden sobre Estado:
 
 Sean $a, b$ estados generados por el algoritmo de búsqueda en
 profundidad:
-
-$$a \prec b \equiv f(a) < f(b) \ \vee \ (f(a) = f(b) \ \wedge \ Perfil(a) \sqsubseteq Perfil(b))$$
-
-Donde $f$ es una función de clasificación asociada a los
+$$a \prec b \equiv f(a) < f(b) \ \lor \ (f(a) = f(b) \ \land \ Perfil(a) \sqsubseteq Perfil(b))\mbox{,}$$
+\noindent donde $f$ es una función de clasificación asociada a los
 estados y $Perfil(a)$ es el perfil generado por el estado
 $a$. El valor de la función de clasificación para cada estado 
 es precalculado al generarlo y se obtiene de forma semejante

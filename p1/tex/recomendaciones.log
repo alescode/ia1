@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  20 JUN 2010 20:59
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.4.29)  21 JUN 2010 18:01
 entering extended mode
 **recomendaciones.tex
 (./recomendaciones.tex
@@ -418,24 +418,35 @@ LaTeX Font Info:    ... okay on input line 28.
 \MPscratchDim=\dimen125
 \MPnumerator=\count109
 \everyMPtoPDFconversion=\toks25
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+ (/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+
+(/usr/local/gwTeX/texmf.texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 ) [7
 
-{/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map}]
-(./recomendaciones.aux) ) 
+{/usr/local/gwTeX/texmf.local/fonts/map/pdftex/updmap/pdftex.map}] (./recomenda
+ciones.aux) ) 
 Here is how much of TeX's memory you used:
- 2578 strings out of 94073
- 30257 string characters out of 1163499
+ 2626 strings out of 94073
+ 31017 string characters out of 1163499
  2085496 words of memory out of 4536692
- 5855 multiletter control sequences out of 10000+50000
- 4891 words of font info for 18 fonts, out of 2000000 for 2000
+ 5882 multiletter control sequences out of 10000+50000
+ 9247 words of font info for 35 fonts, out of 2000000 for 2000
  645 hyphenation exceptions out of 5000
  32i,4n,25p,240b,189s stack positions out of 5000i,500n,6000p,200000b,50000s
-</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm
-/cmbx12.pfb></usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></
-usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmti12.pfb>
-Output written on recomendaciones.pdf (1 page, 25498 bytes).
+</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmbx12.pfb>
+</usr/local/gwTeX/texmf.texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/local/g
+wTeX/texmf.texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/gwTeX/texmf.tex
+live/fonts/type1/bluesky/cm/cmsy8.pfb></usr/local/gwTeX/texmf.texlive/fonts/typ
+e1/bluesky/cm/cmti12.pfb>
+Output written on recomendaciones.pdf (1 page, 31442 bytes).
 PDF statistics:
- 18 PDF objects out of 1000 (max. 8388607)
+ 26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -31,7 +31,15 @@
 
 En base a estos resultados, puede afirmarse que aproximadamente la mitad
 de las veces la función de clasificación evita que se realicen comparaciones
-(costosas) entre perfiles para revisar si uno ha sido visitado.
+(costosas) entre perfiles para revisar si uno ha sido visitado. Sin embargo,
+la tendencia parece ser que problemas cuya solución óptima se logra con
+más cambios elementales tienen valores medios de proporción más bajos que
+problemas más ``fáciles".
+
+En general, los problemas son resueltos más rápidamente utilizando IDA*
+que usando BFS. Este resultado sugiere que la heurística utilizada $T'(x)$
+fue una buena elección; valiéndose de algún mecanismo como tablas
+de transposición podrían lograrse mejores tiempos de solución.
 
 \section{Recomendaciones}
 Un enfoque diferente que podría haberse tomado al enfrentarse el problema
